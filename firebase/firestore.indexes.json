@@ -1,0 +1,111 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "anlaesse",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "anmeldenNoetig",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "pushup",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "anmeldeschluss",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "anlaesse",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "endeAnlass",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "startAnlass",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "anlaesse",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "leiteranlass",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "endeAnlass",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "anlaesse",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "leiteranlass",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "endeAnlass",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "startAnlass",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "bestellungen",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "uid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "datum",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Nachrichten",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "users",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "lastMessage.timestamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "verlaufKueche",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "name",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "zeitpunkt",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

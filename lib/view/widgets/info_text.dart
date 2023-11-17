@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gesundheitspraxis_website/model/textTheme.dart';
+
+import '../../model/textTheme.dart';
 
 class InfoText extends StatelessWidget {
   final String type;

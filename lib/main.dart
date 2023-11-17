@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'firebase_options.dart';
@@ -24,14 +25,21 @@ class Gesundheitspraxis extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Gesundheitspraxis',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey.shade900),
-        useMaterial3: true,
+    ///debugInvertOversizedImages = true;
+    return RobotDetector(
+      child: MaterialApp(
+        title: 'Gesundheitspraxis',
+        debugShowCheckedModeBanner: false,
+
+        ///try for better seo
+        navigatorObservers: [seoRouteObserver],
+        theme: ThemeData(
+          colorScheme:
+              ColorScheme.fromSeed(seedColor: Colors.blueGrey.shade900),
+          useMaterial3: true,
+        ),
+        home: const HomePage(),
       ),
-      home: const HomePage(),
     );
   }
 }

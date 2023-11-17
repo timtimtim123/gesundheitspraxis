@@ -1,7 +1,9 @@
 import 'package:drop_shadow/drop_shadow.dart';
 import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 import '../controller/responsive.dart';
+import '../view/widgets/heroImageFullscreen.dart';
 import 'imageData.dart';
 import 'textTheme.dart';
 
@@ -12,29 +14,39 @@ class PageViewContent {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Willkommen auf der Webseite meiner Gesundheitspraxis\nmit Schwerpunkt auf die Massage und Rückentherapie.',
-            style: CustomTextTheme.titleLarge,
+          TextRenderer(
+            child: Text(
+              'Willkommen auf der Webseite meiner Gesundheitspraxis\nmit Schwerpunkt auf die Massage und Rückentherapie.',
+              style: CustomTextTheme.titleLarge,
+            ),
           ),
           SizedBox(height: 25),
-          Text(
-            'Vieles was wir in unserem Leben erfahren, lastet nicht nur auf unseren Schultern, sondern wirkt auf unseren gesamten Körper.\nUnd im Zentrum steht dabei unser Rücken.',
-            style: CustomTextTheme.bodyLarge,
+          TextRenderer(
+            child: Text(
+              'Vieles was wir in unserem Leben erfahren, lastet nicht nur auf unseren Schultern, sondern wirkt auf unseren gesamten Körper.\nUnd im Zentrum steht dabei unser Rücken.',
+              style: CustomTextTheme.bodyLarge,
+            ),
           ),
           SizedBox(height: 15),
-          Text(
-            'Die Komplexität der Zusammenhänge unseres Bewegungsapparates erfordern unterschiedlichste Behandlungs- und Therapieansätze.',
-            style: CustomTextTheme.bodyLarge,
+          TextRenderer(
+            child: Text(
+              'Die Komplexität der Zusammenhänge unseres Bewegungsapparates erfordern unterschiedlichste Behandlungs- und Therapieansätze.',
+              style: CustomTextTheme.bodyLarge,
+            ),
           ),
           SizedBox(height: 15),
-          Text(
-            'Ich würde mich daher sehr freuen, wenn ich, angepasst an Deine persönlichen Bedürfnisse, Dir eine individuelle Therapiebehandlung anbieten dürfte.',
-            style: CustomTextTheme.bodyLarge,
+          TextRenderer(
+            child: Text(
+              'Ich würde mich daher sehr freuen, wenn ich, angepasst an Deine persönlichen Bedürfnisse, Dir eine individuelle Therapiebehandlung anbieten dürfte.',
+              style: CustomTextTheme.bodyLarge,
+            ),
           ),
           SizedBox(height: 15),
-          Text(
-            'Brigitte Müller',
-            style: CustomTextTheme.bodyLarge,
+          TextRenderer(
+            child: Text(
+              'Brigitte Müller',
+              style: CustomTextTheme.bodyLarge,
+            ),
           ),
         ],
       ),
@@ -135,6 +147,8 @@ class PageViewContent {
                   filterQuality: FilterQuality.high,
                   fit: BoxFit.cover,
                   height: 400,
+                  cacheHeight:
+                      (400 * MediaQuery.of(context).devicePixelRatio).round(),
                 ),
               ),
             ),
@@ -1059,11 +1073,25 @@ class PageViewContent {
             child: DropShadow(
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/kartenlegung.jpeg',
-                  filterQuality: FilterQuality.high,
-                  fit: BoxFit.cover,
-                  height: 600,
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const HeroImageFullScreen();
+                      }));
+                    },
+                    child: Hero(
+                      tag: 'kartenlegung',
+                      child: Image.asset(
+                        'images/kartenlegung.jpeg',
+                        filterQuality: FilterQuality.high,
+                        fit: BoxFit.cover,
+                        height: 600,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -1216,7 +1244,7 @@ class PageViewContent {
   }
 
   static List<Widget> getContentSmallDevice(
-      AnimationController animationController) {
+      AnimationController animationController, BuildContext context) {
     return [
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -2192,10 +2220,24 @@ class PageViewContent {
             offset: CustomImageData.getOffset(),
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(16)),
-              child: Image.asset(
-                'images/kartenlegung.jpeg',
-                filterQuality: FilterQuality.high,
-                fit: BoxFit.cover,
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const HeroImageFullScreen();
+                    }));
+                  },
+                  child: Hero(
+                    tag: 'kartenlegung',
+                    child: Image.asset(
+                      'images/kartenlegung.jpeg',
+                      filterQuality: FilterQuality.high,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
               ),
             ),
           ),

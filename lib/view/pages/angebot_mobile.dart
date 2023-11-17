@@ -53,7 +53,7 @@ class _AngebotMobileState extends State<AngebotMobile>
                           Padding(
                             padding: const EdgeInsets.all(15),
                             child: PageViewContent.getContentSmallDevice(
-                                _animationController)[widget.index],
+                                _animationController, context)[widget.index],
                           ),
                           const SizedBox(height: 30),
                           const Spacer(),
@@ -80,6 +80,12 @@ class _AngebotMobileState extends State<AngebotMobile>
                   letterSpacing: 2,
                 ),
               ),
+              actions: [
+                Image.asset(
+                  'images/massage.png',
+                  color: Colors.white,
+                ),
+              ],
               iconTheme: const IconThemeData(color: Colors.white),
             ),
           ),

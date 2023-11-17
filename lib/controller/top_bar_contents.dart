@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gesundheitspraxis_website/view/pages/homePage.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 import '../model/menu_angebote.dart';
 import '../model/textTheme.dart';
 import '../view/pages/angebot.dart';
+import '../view/pages/homePage.dart';
 
 class TopBarContents extends StatefulWidget {
   final double opacity;
@@ -80,10 +81,12 @@ class _TopBarContentsState extends State<TopBarContents>
                     width: 131,
                     child: Column(
                       children: [
-                        Text(
-                          'Willkommen',
-                          style:
-                              CustomTextTheme.getMenuTextStyle(_isHovering, 0),
+                        TextRenderer(
+                          child: Text(
+                            'Willkommen',
+                            style: CustomTextTheme.getMenuTextStyle(
+                                _isHovering, 0),
+                          ),
                         ),
                         const SizedBox(height: 5),
                         getHoverLine(0),
@@ -129,10 +132,12 @@ class _TopBarContentsState extends State<TopBarContents>
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Über mich',
-                          style:
-                              CustomTextTheme.getMenuTextStyle(_isHovering, 2),
+                        TextRenderer(
+                          child: Text(
+                            'Über mich',
+                            style: CustomTextTheme.getMenuTextStyle(
+                                _isHovering, 2),
+                          ),
                         ),
                         const SizedBox(height: 5),
                         getHoverLine(2),
@@ -160,10 +165,12 @@ class _TopBarContentsState extends State<TopBarContents>
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Preise',
-                          style:
-                              CustomTextTheme.getMenuTextStyle(_isHovering, 3),
+                        TextRenderer(
+                          child: Text(
+                            'Preise',
+                            style: CustomTextTheme.getMenuTextStyle(
+                                _isHovering, 3),
+                          ),
                         ),
                         const SizedBox(height: 5),
                         getHoverLine(3),
@@ -217,9 +224,11 @@ class _TopBarContentsState extends State<TopBarContents>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const SizedBox(height: 10),
-                    Text(
-                      'Angebote',
-                      style: CustomTextTheme.getMenuTextStyle(_isHovering, 1),
+                    TextRenderer(
+                      child: Text(
+                        'Angebote',
+                        style: CustomTextTheme.getMenuTextStyle(_isHovering, 1),
+                      ),
                     ),
                     const SizedBox(height: 5),
                     getHoverLine(1),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gesundheitspraxis_website/view/pages/angebot_mobile.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 import '../../controller/responsive.dart';
 import '../pages/angebot.dart';
+import '../pages/angebot_mobile.dart';
 import 'info_text.dart';
 
 class BottomBar extends StatefulWidget {
@@ -42,18 +43,20 @@ class _BottomBarState extends State<BottomBar> {
                       onHover: (hovering) {
                         setState(() => isHovering = hovering);
                       },
-                      child: Text(
-                        'Impressum/Datenschutz',
-                        style: TextStyle(
-                          fontFamily: 'Kalam',
-                          color: isHovering
-                              ? Colors.blueGrey[100]
-                              : Colors.blueGrey[300],
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          decoration:
-                              isHovering ? TextDecoration.underline : null,
-                          decorationColor: Colors.white,
+                      child: TextRenderer(
+                        child: Text(
+                          'Impressum/Datenschutz',
+                          style: TextStyle(
+                            fontFamily: 'Kalam',
+                            color: isHovering
+                                ? Colors.blueGrey[100]
+                                : Colors.blueGrey[300],
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            decoration:
+                                isHovering ? TextDecoration.underline : null,
+                            decorationColor: Colors.white,
+                          ),
                         ),
                       ),
                     ),
@@ -62,14 +65,18 @@ class _BottomBarState extends State<BottomBar> {
                     ),
                   ],
                   const SizedBox(height: 5),
-                  const InfoText(
-                    type: 'Email',
-                    text: 'info@rueck-grad.ch',
+                  const TextRenderer(
+                    child: InfoText(
+                      type: 'Email',
+                      text: 'info@rueck-grad.ch',
+                    ),
                   ),
                   const SizedBox(height: 3),
-                  const InfoText(
-                    type: 'Telefon',
-                    text: '079 728 16 56',
+                  const TextRenderer(
+                    child: InfoText(
+                      type: 'Telefon',
+                      text: '079 728 16 56',
+                    ),
                   ),
                 ],
               ),
@@ -93,18 +100,20 @@ class _BottomBarState extends State<BottomBar> {
                         onHover: (hovering) {
                           setState(() => isHovering = hovering);
                         },
-                        child: Text(
-                          'Impressum/Datenschutz',
-                          style: TextStyle(
-                            fontFamily: 'Kalam',
-                            color: isHovering
-                                ? Colors.blueGrey[100]
-                                : Colors.blueGrey[300],
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            decoration:
-                                isHovering ? TextDecoration.underline : null,
-                            decorationColor: Colors.white,
+                        child: TextRenderer(
+                          child: Text(
+                            'Impressum/Datenschutz',
+                            style: TextStyle(
+                              fontFamily: 'Kalam',
+                              color: isHovering
+                                  ? Colors.blueGrey[100]
+                                  : Colors.blueGrey[300],
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              decoration:
+                                  isHovering ? TextDecoration.underline : null,
+                              decorationColor: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -116,14 +125,18 @@ class _BottomBarState extends State<BottomBar> {
                       const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          InfoText(
-                            type: 'Email',
-                            text: 'info@rueck-grad.ch',
+                          TextRenderer(
+                            child: InfoText(
+                              type: 'Email',
+                              text: 'info@rueck-grad.ch',
+                            ),
                           ),
                           SizedBox(height: 5),
-                          InfoText(
-                            type: 'Telefon',
-                            text: '079 728 16 56',
+                          TextRenderer(
+                            child: InfoText(
+                              type: 'Telefon',
+                              text: '079 728 16 56',
+                            ),
                           )
                         ],
                       ),

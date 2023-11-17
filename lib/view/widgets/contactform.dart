@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:gesundheitspraxis_website/model/simplesnackbar.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 import '../../controller/database.dart';
 import '../../controller/responsive.dart';
 import '../../controller/validators.dart';
 import '../../model/request.dart';
+import '../../model/simplesnackbar.dart';
 import '../../model/textTheme.dart';
 
 class ContactForm extends StatefulWidget {
@@ -37,22 +38,26 @@ class _ContactFormState extends State<ContactForm> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            'Kontakt',
-            style: isSmallDevice
-                ? CustomTextTheme.headlineSmall
-                : CustomTextTheme.headlineLarge,
+          TextRenderer(
+            child: Text(
+              'Kontakt',
+              style: isSmallDevice
+                  ? CustomTextTheme.headlineSmall
+                  : CustomTextTheme.headlineLarge,
+            ),
           ),
 
           ///SizedBox(height: isSmallDevice ? 30 : 50),
           const SizedBox(height: 30),
           Align(
             alignment: Alignment.centerLeft,
-            child: Text(
-              'Montag bis Samstag nach Vereinbarung',
-              style: isSmallDevice
-                  ? CustomTextTheme.labelSmall
-                  : CustomTextTheme.labelLarge,
+            child: TextRenderer(
+              child: Text(
+                'Montag bis Samstag nach Vereinbarung',
+                style: isSmallDevice
+                    ? CustomTextTheme.labelSmall
+                    : CustomTextTheme.labelLarge,
+              ),
             ),
           ),
           const SizedBox(height: 5),
@@ -189,9 +194,11 @@ class _ContactFormState extends State<ContactForm> {
 
   Widget setUpButtonChild() {
     if (_state == 0) {
-      return Text(
-        'Anfrage senden',
-        style: CustomTextTheme.labelLarge.copyWith(color: Colors.white),
+      return TextRenderer(
+        child: Text(
+          'Anfrage senden',
+          style: CustomTextTheme.labelLarge.copyWith(color: Colors.white),
+        ),
       );
     } else if (_state == 1) {
       return const CircularProgressIndicator(color: Colors.white);

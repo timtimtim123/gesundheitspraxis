@@ -1,5 +1,6 @@
 import 'package:drop_shadow/drop_shadow.dart';
 import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 import '../../controller/responsive.dart';
 import '../../model/imageData.dart';
@@ -27,10 +28,13 @@ class ImageRow extends StatelessWidget {
                 offset: CustomImageData.getOffset(),
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(16)),
-                  child: Image.asset(
-                    'images/liege.jpg',
-                    filterQuality: FilterQuality.high,
-                    fit: BoxFit.cover,
+                  child: ImageRenderer(
+                    alt: 'Liege',
+                    child: Image.asset(
+                      'images/liege.jpg',
+                      filterQuality: FilterQuality.high,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -39,10 +43,13 @@ class ImageRow extends StatelessWidget {
                 offset: CustomImageData.getOffset(),
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(16)),
-                  child: Image.asset(
-                    'images/raum_sofa.jpg',
-                    filterQuality: FilterQuality.high,
-                    fit: BoxFit.cover,
+                  child: ImageRenderer(
+                    alt: 'Raum mit Sofa',
+                    child: Image.asset(
+                      'images/raum_sofa.jpg',
+                      filterQuality: FilterQuality.high,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -57,10 +64,13 @@ class ImageRow extends StatelessWidget {
                 offset: CustomImageData.getOffset(),
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(16)),
-                  child: Image.asset(
-                    'images/raum.jpg',
-                    filterQuality: FilterQuality.high,
-                    fit: BoxFit.cover,
+                  child: ImageRenderer(
+                    alt: 'Raum',
+                    child: Image.asset(
+                      'images/raum.jpg',
+                      filterQuality: FilterQuality.high,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -69,10 +79,13 @@ class ImageRow extends StatelessWidget {
                 offset: CustomImageData.getOffset(),
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(16)),
-                  child: Image.asset(
-                    'images/haus.jpg',
-                    filterQuality: FilterQuality.high,
-                    fit: BoxFit.cover,
+                  child: ImageRenderer(
+                    alt: 'Haus',
+                    child: Image.asset(
+                      'images/haus.jpg',
+                      filterQuality: FilterQuality.high,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -90,31 +103,43 @@ class ImageRow extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Image.asset(
-              'images/liege.jpg',
-              filterQuality: FilterQuality.high,
-              fit: BoxFit.cover,
+            child: ImageRenderer(
+              alt: 'Liege',
+              child: Image.asset(
+                'images/liege.jpg',
+                filterQuality: FilterQuality.high,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Expanded(
-            child: Image.asset(
-              'images/raum.jpg',
-              filterQuality: FilterQuality.high,
-              fit: BoxFit.cover,
+            child: ImageRenderer(
+              alt: 'Raum',
+              child: Image.asset(
+                'images/raum.jpg',
+                filterQuality: FilterQuality.high,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Expanded(
-            child: Image.asset(
-              'images/raum_sofa.jpg',
-              filterQuality: FilterQuality.high,
-              fit: BoxFit.cover,
+            child: ImageRenderer(
+              alt: 'Raum mit Sofa',
+              child: Image.asset(
+                'images/raum_sofa.jpg',
+                filterQuality: FilterQuality.high,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Expanded(
-            child: Image.asset(
-              'images/haus.jpg',
-              filterQuality: FilterQuality.high,
-              fit: BoxFit.cover,
+            child: ImageRenderer(
+              alt: 'Haus',
+              child: Image.asset(
+                'images/haus.jpg',
+                filterQuality: FilterQuality.high,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ],

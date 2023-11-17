@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 import '../../controller/drawer.dart';
 import '../../controller/responsive.dart';
@@ -52,13 +53,15 @@ class _HomePageState extends State<HomePage> {
           ? AppBar(
               backgroundColor: Colors.blueGrey.shade900.withOpacity(_opacity),
               elevation: 0,
-              title: Text(
-                'Gesundheitspraxis',
-                style: TextStyle(
-                  color: Colors.white.withOpacity(_opacity),
-                  fontSize: 20,
-                  fontFamily: 'Kalam',
-                  letterSpacing: 2,
+              title: TextRenderer(
+                child: Text(
+                  'Gesundheitspraxis',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(_opacity),
+                    fontSize: 20,
+                    fontFamily: 'Kalam',
+                    letterSpacing: 2,
+                  ),
                 ),
               ),
               iconTheme: const IconThemeData(color: Colors.white),
@@ -153,30 +156,40 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Willkommen auf der Webseite meiner Gesundheitspraxis mit Schwerpunkt auf die Massage und Rückentherapie.',
-                style: CustomTextTheme.titleSmall,
-                textAlign: TextAlign.center,
+              TextRenderer(
+                child: Text(
+                  'Willkommen auf der Webseite meiner Gesundheitspraxis mit Schwerpunkt auf die Massage und Rückentherapie.',
+                  style: CustomTextTheme.titleSmall,
+                  textAlign: TextAlign.center,
+                ),
               ),
               SizedBox(height: 25),
-              Text(
-                'Vieles was wir in unserem Leben erfahren, lastet nicht nur auf unseren Schultern, sondern wirkt auf unseren gesamten Körper.\nUnd im Zentrum steht dabei unser Rücken.',
-                style: CustomTextTheme.bodySmall,
+              TextRenderer(
+                child: Text(
+                  'Vieles was wir in unserem Leben erfahren, lastet nicht nur auf unseren Schultern, sondern wirkt auf unseren gesamten Körper.\nUnd im Zentrum steht dabei unser Rücken.',
+                  style: CustomTextTheme.bodySmall,
+                ),
               ),
               SizedBox(height: 15),
-              Text(
-                'Die Komplexität der Zusammenhänge unseres Bewegungsapparates erfordern unterschiedlichste Behandlungs- und Therapieansätze.',
-                style: CustomTextTheme.bodySmall,
+              TextRenderer(
+                child: Text(
+                  'Die Komplexität der Zusammenhänge unseres Bewegungsapparates erfordern unterschiedlichste Behandlungs- und Therapieansätze.',
+                  style: CustomTextTheme.bodySmall,
+                ),
               ),
               SizedBox(height: 15),
-              Text(
-                'Ich würde mich daher sehr freuen, wenn ich, angepasst an Deine persönlichen Bedürfnisse, Dir eine individuelle Therapiebehandlung anbieten dürfte.',
-                style: CustomTextTheme.bodySmall,
+              TextRenderer(
+                child: Text(
+                  'Ich würde mich daher sehr freuen, wenn ich, angepasst an Deine persönlichen Bedürfnisse, Dir eine individuelle Therapiebehandlung anbieten dürfte.',
+                  style: CustomTextTheme.bodySmall,
+                ),
               ),
               SizedBox(height: 15),
-              Text(
-                'Brigitte Müller',
-                style: CustomTextTheme.bodySmall,
+              TextRenderer(
+                child: Text(
+                  'Brigitte Müller',
+                  style: CustomTextTheme.bodySmall,
+                ),
               ),
             ],
           ),

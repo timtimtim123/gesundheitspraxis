@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 import '../../controller/responsive.dart';
 import '../../model/textTheme.dart';
@@ -25,44 +27,47 @@ class Location extends StatelessWidget {
       isSmallScreen = true;
     }
 
-    return Column(
-      children: [
-        isSmallScreen ? const SizedBox(height: 15) : const SizedBox(height: 30),
-        Text(
-          'Standort',
-          style: isSmallScreen
-              ? CustomTextTheme.headlineSmall
-              : CustomTextTheme.headlineLarge,
-        ),
+    return PointerInterceptor(
+      child: Column(
+        children: [
+          isSmallScreen
+              ? const SizedBox(height: 15)
+              : const SizedBox(height: 30),
+          TextRenderer(
+            child: Text(
+              'Standort',
+              style: isSmallScreen
+                  ? CustomTextTheme.headlineSmall
+                  : CustomTextTheme.headlineLarge,
+            ),
+          ),
 
-        ///isSmallDevice ? const SizedBox(height: 15) : const SizedBox(height: 30),
-        const SizedBox(height: 40),
-        if (isSmallScreen) ...[
-          getDataSquaresSmallScreen(),
-        ] else ...[
-          getDataSquaresLargeScreen(context),
-        ],
-        const SizedBox(height: 30),
-        IgnorePointer(
-          ignoring: true,
-          child: SizedBox(
+          ///isSmallDevice ? const SizedBox(height: 15) : const SizedBox(height: 30),
+          const SizedBox(height: 40),
+          if (isSmallScreen) ...[
+            getDataSquaresSmallScreen(),
+          ] else ...[
+            getDataSquaresLargeScreen(context),
+          ],
+          const SizedBox(height: 30),
+          SizedBox(
             height: isSmallScreen ? 250 : 400,
             child: GoogleMap(
               mapType: MapType.normal,
+              initialCameraPosition: _kGooglePlex,
               markers: {
                 const Marker(
                   markerId: MarkerId('0'),
                   position: LatLng(47.46215402772178, 8.32194538945796),
                 ),
               },
-              initialCameraPosition: _kGooglePlex,
               onMapCreated: (GoogleMapController controller) {
                 _controller.complete(controller);
               },
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -85,10 +90,12 @@ class Location extends StatelessWidget {
                 size: 40,
                 color: Colors.blueGrey.shade900,
               ),
-              const SelectableText(
-                'Alberich Zwyssigstrasse 36\n5430 Wettingen\nZugang und Parkplatz: Sonneggstrasse',
-                style: CustomTextTheme.labelSmallLocation,
-                textAlign: TextAlign.center,
+              const TextRenderer(
+                child: SelectableText(
+                  'Alberich Zwyssigstrasse 36\n5430 Wettingen\nZugang und Parkplatz: Sonneggstrasse',
+                  style: CustomTextTheme.labelSmallLocation,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ],
           ),
@@ -114,10 +121,12 @@ class Location extends StatelessWidget {
                         size: 40,
                         color: Colors.blueGrey.shade900,
                       ),
-                      const SelectableText(
-                        '079 728 16 56',
-                        style: CustomTextTheme.labelSmallLocation,
-                        textAlign: TextAlign.center,
+                      const TextRenderer(
+                        child: SelectableText(
+                          '079 728 16 56',
+                          style: CustomTextTheme.labelSmallLocation,
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ],
                   ),
@@ -140,10 +149,12 @@ class Location extends StatelessWidget {
                         size: 40,
                         color: Colors.blueGrey.shade900,
                       ),
-                      const SelectableText(
-                        'info@rueck-grad.ch',
-                        style: CustomTextTheme.labelSmallLocation,
-                        textAlign: TextAlign.center,
+                      const TextRenderer(
+                        child: SelectableText(
+                          'info@rueck-grad.ch',
+                          style: CustomTextTheme.labelSmallLocation,
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ],
                   ),
@@ -179,10 +190,12 @@ class Location extends StatelessWidget {
                     size: 60,
                     color: Colors.blueGrey.shade900,
                   ),
-                  const SelectableText(
-                    'Alberich Zwyssigstrasse 36\n5430 Wettingen\nZugang und Parkplatz: Sonneggstrasse',
-                    style: CustomTextTheme.labelLarge,
-                    textAlign: TextAlign.center,
+                  const TextRenderer(
+                    child: SelectableText(
+                      'Alberich Zwyssigstrasse 36\n5430 Wettingen\nZugang und Parkplatz: Sonneggstrasse',
+                      style: CustomTextTheme.labelLarge,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ],
               ),
@@ -205,10 +218,12 @@ class Location extends StatelessWidget {
                     size: 60,
                     color: Colors.blueGrey.shade900,
                   ),
-                  const SelectableText(
-                    '079 728 16 56',
-                    style: CustomTextTheme.labelLarge,
-                    textAlign: TextAlign.center,
+                  const TextRenderer(
+                    child: SelectableText(
+                      '079 728 16 56',
+                      style: CustomTextTheme.labelLarge,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ],
               ),
@@ -231,10 +246,12 @@ class Location extends StatelessWidget {
                     size: 60,
                     color: Colors.blueGrey.shade900,
                   ),
-                  const SelectableText(
-                    'info@rueck-grad.ch',
-                    style: CustomTextTheme.labelLarge,
-                    textAlign: TextAlign.center,
+                  const TextRenderer(
+                    child: SelectableText(
+                      'info@rueck-grad.ch',
+                      style: CustomTextTheme.labelLarge,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ],
               ),

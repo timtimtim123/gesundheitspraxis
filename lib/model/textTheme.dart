@@ -5,7 +5,11 @@ class CustomTextTheme {
 
   static const headlineSmall = TextStyle(fontFamily: 'Kalam', fontSize: 30);
 
-  static const titleLarge = TextStyle(fontFamily: 'Kalam', fontSize: 33);
+  static const titleLarge = TextStyle(
+    fontFamily: 'Kalam',
+    fontSize: 33,
+    fontWeight: FontWeight.normal,
+  );
 
   static const titleSmall = TextStyle(fontFamily: 'Kalam', fontSize: 23);
 

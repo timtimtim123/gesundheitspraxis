@@ -53,7 +53,7 @@ class _AngebotState extends State<Angebot> {
                             child: PageViewContent.getContentLargeDevice(
                                 context)[widget.index],
                           ),
-                          const SizedBox(height: 50),
+                          const SizedBox(height: 43),
                           const Spacer(),
                           const BottomBar(withImpressum: true),
                         ],

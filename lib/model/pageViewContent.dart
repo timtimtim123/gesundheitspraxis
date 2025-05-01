@@ -1,6 +1,5 @@
 import 'package:drop_shadow/drop_shadow.dart';
 import 'package:flutter/material.dart';
-import 'package:seo_renderer/seo_renderer.dart';
 
 import '../controller/responsive.dart';
 import '../view/widgets/heroImageFullscreen.dart';
@@ -14,39 +13,29 @@ class PageViewContent {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextRenderer(
-            child: Text(
-              'Willkommen auf der Webseite meiner Gesundheitspraxis\nmit Schwerpunkt auf die Massage und Rückentherapie.',
-              style: CustomTextTheme.titleLarge,
-            ),
+          Text(
+            'Willkommen auf der Webseite meiner Gesundheitspraxis\nmit Schwerpunkt auf die Massage und Rückentherapie.',
+            style: CustomTextTheme.titleLarge,
           ),
           SizedBox(height: 25),
-          TextRenderer(
-            child: Text(
-              'Vieles was wir in unserem Leben erfahren, lastet nicht nur auf unseren Schultern, sondern wirkt auf unseren gesamten Körper.\nUnd im Zentrum steht dabei unser Rücken.',
-              style: CustomTextTheme.bodyLarge,
-            ),
+          Text(
+            'Vieles was wir in unserem Leben erfahren, lastet nicht nur auf unseren Schultern, sondern wirkt auf unseren gesamten Körper.\nUnd im Zentrum steht dabei unser Rücken.',
+            style: CustomTextTheme.bodyLarge,
           ),
           SizedBox(height: 15),
-          TextRenderer(
-            child: Text(
-              'Die Komplexität der Zusammenhänge unseres Bewegungsapparates erfordern unterschiedlichste Behandlungs- und Therapieansätze.',
-              style: CustomTextTheme.bodyLarge,
-            ),
+          Text(
+            'Die Komplexität der Zusammenhänge unseres Bewegungsapparates erfordern unterschiedlichste Behandlungs- und Therapieansätze.',
+            style: CustomTextTheme.bodyLarge,
           ),
           SizedBox(height: 15),
-          TextRenderer(
-            child: Text(
-              'Ich würde mich daher sehr freuen, wenn ich, angepasst an Deine persönlichen Bedürfnisse, Dir eine individuelle Therapiebehandlung anbieten dürfte.',
-              style: CustomTextTheme.bodyLarge,
-            ),
+          Text(
+            'Ich würde mich daher sehr freuen, wenn ich, angepasst an Deine persönlichen Bedürfnisse, Dir eine individuelle Therapiebehandlung anbieten dürfte.',
+            style: CustomTextTheme.bodyLarge,
           ),
           SizedBox(height: 15),
-          TextRenderer(
-            child: Text(
-              'Brigitte Müller',
-              style: CustomTextTheme.bodyLarge,
-            ),
+          Text(
+            'Brigitte Müller',
+            style: CustomTextTheme.bodyLarge,
           ),
         ],
       ),
@@ -137,18 +126,18 @@ class PageViewContent {
               ),
             ],
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 60),
           Center(
             child: DropShadow(
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/schwingkissen.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
-                  height: 400,
-                  cacheHeight:
-                      (400 * MediaQuery.of(context).devicePixelRatio).round(),
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/schwingkissen.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.8).round(),
+                  ),
                 ),
               ),
             ),
@@ -266,7 +255,7 @@ class PageViewContent {
               ),
             ],
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 60),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -274,20 +263,37 @@ class PageViewContent {
                 child: DropShadow(
                   child: ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(16)),
-                    child: Image.asset(
-                      'images/dorn_1.jpeg',
+                    child: Image(
+                      fit: BoxFit.cover,
                       filterQuality: FilterQuality.high,
+                      image: ResizeImage(
+                        const AssetImage('images/dorn_1.jpeg'),
+
+                        ///nimmt einfach maximalen Platz ein
+                        width:
+                            (MediaQuery.of(context).size.width / 3.5).round(),
+                        height:
+                            (MediaQuery.of(context).size.width / 5.5).round(),
+                      ),
                     ),
                   ),
                 ),
               ),
+              const SizedBox(width: 10),
               Expanded(
                 child: DropShadow(
                   child: ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(16)),
-                    child: Image.asset(
-                      'images/dorn_2.jpeg',
+                    child: Image(
+                      fit: BoxFit.cover,
                       filterQuality: FilterQuality.high,
+                      image: ResizeImage(
+                        const AssetImage('images/dorn_2.jpeg'),
+                        width:
+                            (MediaQuery.of(context).size.width / 3.5).round(),
+                        height:
+                            (MediaQuery.of(context).size.width / 5.5).round(),
+                      ),
                     ),
                   ),
                 ),
@@ -354,16 +360,18 @@ class PageViewContent {
               ),
             ],
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 60),
           Center(
             child: DropShadow(
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/breuss.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
-                  height: 400,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/breuss.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.8).round(),
+                  ),
                 ),
               ),
             ),
@@ -433,16 +441,18 @@ class PageViewContent {
               ),
             ],
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 60),
           Center(
             child: DropShadow(
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/schmerztherapie_cut.jpg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
-                  height: 420,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/schmerztherapie_cut.jpg'),
+                    width: (MediaQuery.of(context).size.width / 1.8).round(),
+                  ),
                 ),
               ),
             ),
@@ -478,27 +488,46 @@ class PageViewContent {
           ),
           const SizedBox(height: 25),
           const Text(
-            'Die Gruppenstunden sind jeweils am Dienstag und Donnerstag.\nZwischen 19.00 - 20.30 Uhr',
+            'Die Gruppenstunden sind jeweils am Dienstag und Donnerstag.\nZwischen 18.30 - 20.00 Uhr',
             style: CustomTextTheme.bodyLarge,
           ),
-          const Row(
-            children: [
-              Text(
-                'Anmeldung unter Tel.: ',
-                style: CustomTextTheme.bodyLarge,
-              ),
-              SelectableText(
-                '079 728 16 56',
-                style: CustomTextTheme.bodyLarge,
-              ),
-              Text(
-                ' oder über Kontaktformular',
-                style: CustomTextTheme.bodyLarge,
-              ),
-            ],
-          ),
+          if (ResponsiveWidget.isMediumScreen(context)) ...[
+            const Row(
+              children: [
+                Text(
+                  'Anmeldung unter Tel.: ',
+                  style: CustomTextTheme.bodyLarge,
+                ),
+                SelectableText(
+                  '079 728 16 56',
+                  style: CustomTextTheme.bodyLarge,
+                ),
+              ],
+            ),
+            const Text(
+              'oder über Kontaktformular',
+              style: CustomTextTheme.bodyLarge,
+            ),
+          ] else ...[
+            const Row(
+              children: [
+                Text(
+                  'Anmeldung unter Tel.: ',
+                  style: CustomTextTheme.bodyLarge,
+                ),
+                SelectableText(
+                  '079 728 16 56',
+                  style: CustomTextTheme.bodyLarge,
+                ),
+                Text(
+                  ' oder über Kontaktformular',
+                  style: CustomTextTheme.bodyLarge,
+                ),
+              ],
+            ),
+          ],
           const Text(
-            'Maximal 7 Personen - 25 SFr./p.P.',
+            'Maximal 7 Personen - 25 CHF/p.P.',
             style: CustomTextTheme.bodyLarge,
           ),
           const SizedBox(height: 25),
@@ -528,16 +557,18 @@ class PageViewContent {
               ),
             ],
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 60),
           Center(
             child: DropShadow(
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/engpassdehnung.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
-                  height: 500,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/engpassdehnung.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.8).round(),
+                  ),
                 ),
               ),
             ),
@@ -638,16 +669,18 @@ class PageViewContent {
               ),
             ],
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 60),
           Center(
             child: DropShadow(
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/reset_kiefer.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
-                  height: 400,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/reset_kiefer.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.8).round(),
+                  ),
                 ),
               ),
             ),
@@ -686,16 +719,18 @@ class PageViewContent {
             'Und die Wirkung der ätherischen Öle können bis zu einer Woche nachwirken.',
             style: CustomTextTheme.bodyLarge,
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 60),
           Center(
             child: DropShadow(
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/raindrop_massage.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
-                  height: 400,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/raindrop_massage.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.8).round(),
+                  ),
                 ),
               ),
             ),
@@ -920,7 +955,7 @@ class PageViewContent {
               ),
             ],
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 60),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -928,60 +963,39 @@ class PageViewContent {
                 child: DropShadow(
                   child: ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(16)),
-                    child: Image.asset(
-                      'images/schroepfen_1.jpeg',
+                    child: Image(
+                      fit: BoxFit.cover,
                       filterQuality: FilterQuality.high,
+                      image: ResizeImage(
+                        const AssetImage('images/schroepfen_1.jpeg'),
+                        width:
+                            (MediaQuery.of(context).size.width / 3.5).round(),
+                        height:
+                            (MediaQuery.of(context).size.width / 5.5).round(),
+                      ),
                     ),
                   ),
                 ),
               ),
+              const SizedBox(width: 10),
               Expanded(
                 child: DropShadow(
                   child: ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(16)),
-                    child: Image.asset(
-                      'images/schroepfen_2.jpeg',
+                    child: Image(
+                      fit: BoxFit.cover,
                       filterQuality: FilterQuality.high,
+                      image: ResizeImage(
+                        const AssetImage('images/schroepfen_2.jpeg'),
+                        width:
+                            (MediaQuery.of(context).size.width / 3.5).round(),
+                        height:
+                            (MediaQuery.of(context).size.width / 5.5).round(),
+                      ),
                     ),
                   ),
                 ),
               ),
-              /*Expanded(
-                child: Align(
-                  child: InkWell(
-                    onTap: () => showDialog(
-                      barrierDismissible: false,
-                      builder: (BuildContext context) => AlertDialog(
-                        backgroundColor: Colors.transparent,
-                        insetPadding: EdgeInsets.all(2),
-                        title: Container(
-                          decoration: BoxDecoration(),
-                          width: MediaQuery.of(context).size.width,
-                        ),
-                        content: ClipRRect(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(16)),
-                          child: Image.asset(
-                            'images/schroepfen_2.jpeg',
-                            filterQuality: FilterQuality.high,
-                          ),
-                        ),
-                      ),
-                      context: context,
-                    ),
-                    child: DropShadow(
-                      child: ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(16)),
-                        child: Image.asset(
-                          'images/schroepfen_2.jpeg',
-                          filterQuality: FilterQuality.high,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),*/
             ],
           ),
         ],
@@ -1068,7 +1082,7 @@ class PageViewContent {
               ),
             ],
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 60),
           Center(
             child: DropShadow(
               child: ClipRRect(
@@ -1079,16 +1093,19 @@ class PageViewContent {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return const HeroImageFullScreen();
+                        return const HeroImageFullScreen(isSmallScreen: false);
                       }));
                     },
                     child: Hero(
                       tag: 'kartenlegung',
-                      child: Image.asset(
-                        'images/kartenlegung.jpeg',
-                        filterQuality: FilterQuality.high,
+                      child: Image(
                         fit: BoxFit.cover,
-                        height: 600,
+                        filterQuality: FilterQuality.high,
+                        image: ResizeImage(
+                          const AssetImage('images/kartenlegung.jpeg'),
+                          width:
+                              (MediaQuery.of(context).size.width / 1.8).round(),
+                        ),
                       ),
                     ),
                   ),
@@ -1125,17 +1142,19 @@ class PageViewContent {
             'Brigitte Müller',
             style: CustomTextTheme.bodyLarge,
           ),
-          const SizedBox(height: 45),
+          const SizedBox(height: 60),
           Center(
             child: DropShadow(
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/brigitte.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
-                  height:
-                      ResponsiveWidget.isVeryLargeScreen(context) ? 600 : 400,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/brigitte.jpeg'),
+                    height:
+                        ResponsiveWidget.isVeryLargeScreen(context) ? 600 : 400,
+                  ),
                 ),
               ),
             ),
@@ -1146,32 +1165,37 @@ class PageViewContent {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Preise / Kostenübernahme',
+            'Preisanpassung ab 1.5.2025',
             style: CustomTextTheme.titleLarge,
           ),
           SizedBox(height: 25),
           Text(
-            'Mein Stundensatz beträgt für alle Anwendungen je 120 SFr./Std.',
+            'Massage/Therapie für 30 Minuten     65.00 CHF',
             style: CustomTextTheme.bodyLarge,
           ),
           SizedBox(height: 15),
           Text(
-            'Für die Raindrop-Massage kommen 20 SFr. für die ätherischen Öle dazu.',
+            'Massage/Therapie für 60 Minuten    130.00 CHF',
             style: CustomTextTheme.bodyLarge,
           ),
           SizedBox(height: 15),
           Text(
-            'Falls eine Zusatzversicherung für Alternativmedizin besteht, werden Teile meiner Behandlungen durch einige Krankenkassen erstattet.',
+            'Massage/Therapie für 75 Minuten    162.50 CHF',
             style: CustomTextTheme.bodyLarge,
           ),
           SizedBox(height: 15),
           Text(
-            'Ich bitte Sie jedoch vorgängig, sich bei der Krankenkasse für die Kostenübernahme der entsprechenden Behandlungsmethode zu erkundigen.',
+            'Für die Raindrop-Massage kommen 20 CHF für die ätherischen Öle dazu.',
             style: CustomTextTheme.bodyLarge,
           ),
           SizedBox(height: 25),
           Text(
-            'Vielen Dank',
+            'Falls eine Zusatzversicherung für Alternativmedizin besteht, werden Teile meiner Behandlungen durch einige Krankenkassen erstattet. Ich bitte Sie jedoch vorgängig, sich bei der Krankenkasse für die Kostenübernahme der entsprechenden Behandlungsmethode zu erkundigen.',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          SizedBox(height: 35),
+          Text(
+            'Ich danke Euch für Euer Vertrauen und freue mich, Euch auch weiterhin in meiner Praxis begrüssen zu dürfen.',
             style: CustomTextTheme.bodyLarge,
           ),
         ],
@@ -1336,10 +1360,13 @@ class PageViewContent {
             offset: CustomImageData.getOffset(),
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(16)),
-              child: Image.asset(
-                'images/schwingkissen.jpeg',
-                filterQuality: FilterQuality.high,
+              child: Image(
                 fit: BoxFit.cover,
+                filterQuality: FilterQuality.high,
+                image: ResizeImage(
+                  const AssetImage('images/schwingkissen.jpeg'),
+                  width: (MediaQuery.of(context).size.width / 1.2).round(),
+                ),
               ),
             ),
           ),
@@ -1464,10 +1491,13 @@ class PageViewContent {
               offset: CustomImageData.getOffset(),
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/dorn_1.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/dorn_1.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.2).round(),
+                  ),
                 ),
               ),
             ),
@@ -1478,10 +1508,13 @@ class PageViewContent {
               offset: CustomImageData.getOffset(),
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/dorn_2.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/dorn_2.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.2).round(),
+                  ),
                 ),
               ),
             ),
@@ -1551,10 +1584,13 @@ class PageViewContent {
               offset: CustomImageData.getOffset(),
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/breuss.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/breuss.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.2).round(),
+                  ),
                 ),
               ),
             ),
@@ -1627,10 +1663,13 @@ class PageViewContent {
             offset: CustomImageData.getOffset(),
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(16)),
-              child: Image.asset(
-                'images/schmerztherapie_cut.jpg',
-                filterQuality: FilterQuality.high,
+              child: Image(
                 fit: BoxFit.cover,
+                filterQuality: FilterQuality.high,
+                image: ResizeImage(
+                  const AssetImage('images/schmerztherapie_cut.jpg'),
+                  width: (MediaQuery.of(context).size.width / 1.2).round(),
+                ),
               ),
             ),
           ),
@@ -1665,7 +1704,7 @@ class PageViewContent {
           ),
           const SizedBox(height: 25),
           const Text(
-            'Die Gruppenstunden sind jeweils am Dienstag und Donnerstag.\nZwischen 19.00 - 20.30 Uhr',
+            'Die Gruppenstunden sind jeweils am Dienstag und Donnerstag.\nZwischen 18.30 - 20.00 Uhr',
             style: CustomTextTheme.bodySmall,
           ),
           const Text(
@@ -1685,7 +1724,7 @@ class PageViewContent {
             ],
           ),
           const Text(
-            'Maximal 7 Personen - 25 SFr./p.P.',
+            'Maximal 7 Personen - 25 CHF/p.P.',
             style: CustomTextTheme.bodySmall,
           ),
           const SizedBox(height: 25),
@@ -1717,10 +1756,13 @@ class PageViewContent {
             offset: CustomImageData.getOffset(),
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(16)),
-              child: Image.asset(
-                'images/engpassdehnung.jpeg',
-                filterQuality: FilterQuality.high,
+              child: Image(
                 fit: BoxFit.cover,
+                filterQuality: FilterQuality.high,
+                image: ResizeImage(
+                  const AssetImage('images/engpassdehnung.jpeg'),
+                  width: (MediaQuery.of(context).size.width / 1.2).round(),
+                ),
               ),
             ),
           ),
@@ -1825,10 +1867,13 @@ class PageViewContent {
               offset: CustomImageData.getOffset(),
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/reset_kiefer.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/reset_kiefer.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.2).round(),
+                  ),
                 ),
               ),
             ),
@@ -1872,14 +1917,17 @@ class PageViewContent {
             offset: CustomImageData.getOffset(),
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(16)),
-              child: Image.asset(
-                'images/raindrop_massage.jpeg',
-                filterQuality: FilterQuality.high,
+              child: Image(
                 fit: BoxFit.cover,
+                filterQuality: FilterQuality.high,
+                image: ResizeImage(
+                  const AssetImage('images/raindrop_massage.jpeg'),
+                  width: (MediaQuery.of(context).size.width / 1.2).round(),
+                ),
               ),
             ),
           ),
-          const SizedBox(height: 18),
+          const SizedBox(height: 25),
           Theme(
             data: ThemeData().copyWith(dividerColor: Colors.transparent),
             child: ExpansionTile(
@@ -2107,10 +2155,13 @@ class PageViewContent {
               offset: CustomImageData.getOffset(),
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/schroepfen_1.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/schroepfen_1.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.2).round(),
+                  ),
                 ),
               ),
             ),
@@ -2121,10 +2172,13 @@ class PageViewContent {
               offset: CustomImageData.getOffset(),
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/schroepfen_2.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/schroepfen_2.jpeg'),
+                    width: (MediaQuery.of(context).size.width / 1.2).round(),
+                  ),
                 ),
               ),
             ),
@@ -2226,15 +2280,19 @@ class PageViewContent {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const HeroImageFullScreen();
+                      return HeroImageFullScreen(isSmallScreen: true);
                     }));
                   },
                   child: Hero(
-                    tag: 'kartenlegung',
-                    child: Image.asset(
-                      'images/kartenlegung.jpeg',
-                      filterQuality: FilterQuality.high,
+                    tag: 'kartenlegungSmallScreen',
+                    child: Image(
                       fit: BoxFit.cover,
+                      filterQuality: FilterQuality.high,
+                      image: ResizeImage(
+                        const AssetImage('images/kartenlegung.jpeg'),
+                        width:
+                            (MediaQuery.of(context).size.width / 1.2).round(),
+                      ),
                     ),
                   ),
                 ),
@@ -2270,16 +2328,19 @@ class PageViewContent {
             'Brigitte Müller',
             style: CustomTextTheme.bodySmall,
           ),
+          const SizedBox(height: 18),
           Center(
             child: DropShadow(
               offset: CustomImageData.getOffset(),
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(16)),
-                child: Image.asset(
-                  'images/brigitte.jpeg',
-                  filterQuality: FilterQuality.high,
+                child: Image(
                   fit: BoxFit.cover,
-                  height: 250,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/brigitte.jpeg'),
+                    height: 250,
+                  ),
                 ),
               ),
             ),
@@ -2290,32 +2351,37 @@ class PageViewContent {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Preise / Kostenübernahme',
+            'Preisanpassung ab 1.5.2025',
             style: CustomTextTheme.titleSmall,
           ),
           SizedBox(height: 15),
           Text(
-            'Mein Stundensatz beträgt für alle Anwendungen je 120 SFr./Std.',
+            'Massage/Therapie für 30 Minuten     65.00 CHF',
             style: CustomTextTheme.bodySmall,
           ),
           SizedBox(height: 15),
           Text(
-            'Für die Raindrop-Massage kommen 20 SFr. für die ätherischen Öle dazu.',
+            'Massage/Therapie für 60 Minuten    130.00 CHF',
             style: CustomTextTheme.bodySmall,
           ),
           SizedBox(height: 15),
           Text(
-            'Falls eine Zusatzversicherung für Alternativmedizin besteht,\nwerden Teile meiner Behandlungen durch einige Krankenkassen erstattet.',
+            'Massage/Therapie für 75 Minuten    162.50 CHF',
             style: CustomTextTheme.bodySmall,
           ),
           SizedBox(height: 15),
           Text(
-            'Ich bitte Sie jedoch vorgängig, sich bei der Krankenkasse für die Kostenübernahme der entsprechenden Behandlungsmethode zu erkundigen.',
+            'Für die Raindrop-Massage kommen 20 CHF für die ätherischen Öle dazu.',
             style: CustomTextTheme.bodySmall,
           ),
-          SizedBox(height: 25),
+          SizedBox(height: 15),
           Text(
-            'Vielen Dank',
+            'Falls eine Zusatzversicherung für Alternativmedizin besteht,\nwerden Teile meiner Behandlungen durch einige Krankenkassen erstattet. Ich bitte Sie jedoch vorgängig, sich bei der Krankenkasse für die Kostenübernahme der entsprechenden Behandlungsmethode zu erkundigen.',
+            style: CustomTextTheme.bodySmall,
+          ),
+          SizedBox(height: 35),
+          Text(
+            'Ich danke Euch für Euer Vertrauen und freue mich, Euch auch weiterhin in meiner Praxis begrüssen zu dürfen.',
             style: CustomTextTheme.bodySmall,
           ),
         ],

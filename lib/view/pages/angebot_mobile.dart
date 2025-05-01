@@ -3,6 +3,7 @@ import 'package:gesundheitspraxis_website/model/pageViewContent.dart';
 
 import '../../controller/drawer.dart';
 import '../widgets/bottom_bar.dart';
+import 'homePage.dart';
 
 class AngebotMobile extends StatefulWidget {
   const AngebotMobile(this.index, {super.key});
@@ -81,9 +82,20 @@ class _AngebotMobileState extends State<AngebotMobile>
                 ),
               ),
               actions: [
-                Image.asset(
-                  'images/massage.png',
-                  color: Colors.white,
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 10, right: 10, bottom: 10),
+                  child: InkWell(
+                    child: Image.asset(
+                      'images/icon_massage_white.png',
+                      height: 30,
+                    ),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(),
+                      ),
+                    ),
+                  ),
                 ),
               ],
               iconTheme: const IconThemeData(color: Colors.white),

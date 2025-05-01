@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
-import 'package:seo_renderer/seo_renderer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/responsive.dart';
 import '../../model/textTheme.dart';
@@ -22,8 +22,7 @@ class Location extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isSmallScreen = false;
-    if (ResponsiveWidget.isSmartphoneScreen(context) ||
-        ResponsiveWidget.isSmallScreen(context)) {
+    if (ResponsiveWidget.isSmallScreen(context)) {
       isSmallScreen = true;
     }
 
@@ -33,13 +32,11 @@ class Location extends StatelessWidget {
           isSmallScreen
               ? const SizedBox(height: 15)
               : const SizedBox(height: 30),
-          TextRenderer(
-            child: Text(
-              'Standort',
-              style: isSmallScreen
-                  ? CustomTextTheme.headlineSmall
-                  : CustomTextTheme.headlineLarge,
-            ),
+          Text(
+            'Standort',
+            style: isSmallScreen
+                ? CustomTextTheme.headlineSmall
+                : CustomTextTheme.headlineLarge,
           ),
 
           ///isSmallDevice ? const SizedBox(height: 15) : const SizedBox(height: 30),
@@ -66,9 +63,43 @@ class Location extends StatelessWidget {
               },
             ),
           ),
+          SizedBox(height: isSmallScreen ? 10 : 18),
+          Align(
+            alignment: Alignment.centerRight,
+            child: MaterialButton(
+              onPressed: launchGoogleMaps,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(8),
+                ),
+              ),
+              color: const Color(0xFF2D4957),
+              elevation: 8,
+              height: isSmallScreen ? 40 : 55,
+              minWidth: isSmallScreen ? 190 : 250,
+              child: Text(
+                'In Google Maps öffnen',
+                style: isSmallScreen
+                    ? CustomTextTheme.labelLarge
+                        .copyWith(color: Colors.white, fontSize: 15)
+                    : CustomTextTheme.labelLarge.copyWith(color: Colors.white),
+              ),
+            ),
+          ),
         ],
       ),
     );
+  }
+
+  Future<void> launchGoogleMaps() async {
+    Uri url = Uri.parse(
+        'https://www.google.com/maps/search/?api=1&query=47.46215402772178, 8.32194538945796');
+
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      debugPrint('Could not open the map.');
+    }
   }
 
   Widget getDataSquaresSmallScreen() {
@@ -90,12 +121,10 @@ class Location extends StatelessWidget {
                 size: 40,
                 color: Colors.blueGrey.shade900,
               ),
-              const TextRenderer(
-                child: SelectableText(
-                  'Alberich Zwyssigstrasse 36\n5430 Wettingen\nZugang und Parkplatz: Sonneggstrasse',
-                  style: CustomTextTheme.labelSmallLocation,
-                  textAlign: TextAlign.center,
-                ),
+              const SelectableText(
+                'Alberich Zwyssigstrasse 36\n5430 Wettingen\nZugang und Parkplatz: Sonneggstrasse',
+                style: CustomTextTheme.labelSmallLocation,
+                textAlign: TextAlign.center,
               ),
             ],
           ),
@@ -121,12 +150,10 @@ class Location extends StatelessWidget {
                         size: 40,
                         color: Colors.blueGrey.shade900,
                       ),
-                      const TextRenderer(
-                        child: SelectableText(
-                          '079 728 16 56',
-                          style: CustomTextTheme.labelSmallLocation,
-                          textAlign: TextAlign.center,
-                        ),
+                      const SelectableText(
+                        '079 728 16 56',
+                        style: CustomTextTheme.labelSmallLocation,
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
@@ -149,12 +176,10 @@ class Location extends StatelessWidget {
                         size: 40,
                         color: Colors.blueGrey.shade900,
                       ),
-                      const TextRenderer(
-                        child: SelectableText(
-                          'info@rueck-grad.ch',
-                          style: CustomTextTheme.labelSmallLocation,
-                          textAlign: TextAlign.center,
-                        ),
+                      const SelectableText(
+                        'info@rueck-grad.ch',
+                        style: CustomTextTheme.labelSmallLocation,
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
@@ -190,12 +215,10 @@ class Location extends StatelessWidget {
                     size: 60,
                     color: Colors.blueGrey.shade900,
                   ),
-                  const TextRenderer(
-                    child: SelectableText(
-                      'Alberich Zwyssigstrasse 36\n5430 Wettingen\nZugang und Parkplatz: Sonneggstrasse',
-                      style: CustomTextTheme.labelLarge,
-                      textAlign: TextAlign.center,
-                    ),
+                  const SelectableText(
+                    'Alberich Zwyssigstrasse 36\n5430 Wettingen\nZugang und Parkplatz: Sonneggstrasse',
+                    style: CustomTextTheme.labelLarge,
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
@@ -218,12 +241,10 @@ class Location extends StatelessWidget {
                     size: 60,
                     color: Colors.blueGrey.shade900,
                   ),
-                  const TextRenderer(
-                    child: SelectableText(
-                      '079 728 16 56',
-                      style: CustomTextTheme.labelLarge,
-                      textAlign: TextAlign.center,
-                    ),
+                  const SelectableText(
+                    '079 728 16 56',
+                    style: CustomTextTheme.labelLarge,
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
@@ -246,12 +267,10 @@ class Location extends StatelessWidget {
                     size: 60,
                     color: Colors.blueGrey.shade900,
                   ),
-                  const TextRenderer(
-                    child: SelectableText(
-                      'info@rueck-grad.ch',
-                      style: CustomTextTheme.labelLarge,
-                      textAlign: TextAlign.center,
-                    ),
+                  const SelectableText(
+                    'info@rueck-grad.ch',
+                    style: CustomTextTheme.labelLarge,
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),

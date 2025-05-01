@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:seo_renderer/seo_renderer.dart';
 
 import '../../controller/database.dart';
 import '../../controller/responsive.dart';
@@ -29,8 +28,7 @@ class _ContactFormState extends State<ContactForm> {
   @override
   Widget build(BuildContext context) {
     bool isSmallDevice = false;
-    if (ResponsiveWidget.isSmartphoneScreen(context) ||
-        ResponsiveWidget.isSmallScreen(context)) {
+    if (ResponsiveWidget.isSmallScreen(context)) {
       isSmallDevice = true;
     }
     return Form(
@@ -38,26 +36,22 @@ class _ContactFormState extends State<ContactForm> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          TextRenderer(
-            child: Text(
-              'Kontakt',
-              style: isSmallDevice
-                  ? CustomTextTheme.headlineSmall
-                  : CustomTextTheme.headlineLarge,
-            ),
+          Text(
+            'Kontakt',
+            style: isSmallDevice
+                ? CustomTextTheme.headlineSmall
+                : CustomTextTheme.headlineLarge,
           ),
 
           ///SizedBox(height: isSmallDevice ? 30 : 50),
           const SizedBox(height: 30),
           Align(
             alignment: Alignment.centerLeft,
-            child: TextRenderer(
-              child: Text(
-                'Montag bis Samstag nach Vereinbarung',
-                style: isSmallDevice
-                    ? CustomTextTheme.labelSmall
-                    : CustomTextTheme.labelLarge,
-              ),
+            child: Text(
+              'Montag bis Samstag nach Vereinbarung',
+              style: isSmallDevice
+                  ? CustomTextTheme.labelSmall
+                  : CustomTextTheme.labelLarge,
             ),
           ),
           const SizedBox(height: 5),
@@ -171,8 +165,8 @@ class _ContactFormState extends State<ContactForm> {
             height: isSmallDevice
                 ? 50
                 : ResponsiveWidget.isVeryLargeScreen(context)
-                    ? 85
-                    : 70,
+                    ? 65
+                    : 55,
           ),
           MaterialButton(
             onPressed: () => sendRequest(isSmallDevice, context),
@@ -183,7 +177,7 @@ class _ContactFormState extends State<ContactForm> {
             ),
             color: const Color(0xFF2D4957),
             elevation: 15,
-            height: 60,
+            height: isSmallDevice ? 55 : 60,
             minWidth: ResponsiveWidget.isSmallScreen(context) ? 250 : 300,
             child: setUpButtonChild(),
           ),
@@ -194,11 +188,9 @@ class _ContactFormState extends State<ContactForm> {
 
   Widget setUpButtonChild() {
     if (_state == 0) {
-      return TextRenderer(
-        child: Text(
-          'Anfrage senden',
-          style: CustomTextTheme.labelLarge.copyWith(color: Colors.white),
-        ),
+      return Text(
+        'Anfrage senden',
+        style: CustomTextTheme.labelLarge.copyWith(color: Colors.white),
       );
     } else if (_state == 1) {
       return const CircularProgressIndicator(color: Colors.white);

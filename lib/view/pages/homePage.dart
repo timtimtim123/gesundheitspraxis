@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seo_renderer/seo_renderer.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import '../../controller/drawer.dart';
 import '../../controller/responsive.dart';
@@ -33,35 +33,43 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     _scrollController.addListener(_scrollListener);
+    delaySplash();
     super.initState();
+  }
+
+  Future<void> delaySplash() async {
+    await Future.delayed(const Duration(milliseconds: 800));
+    FlutterNativeSplash.remove();
   }
 
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
+    final imageWidgdet = ResizeImage(
+      const AssetImage('images/mohnfeld.jpeg'),
+      policy: ResizeImagePolicy.fit,
+      width: screenSize.width.round(),
+      height: screenSize.height.round(),
+    );
+    precacheImage(imageWidgdet, context);
     _opacity = _scrollPosition < screenSize.height * 0.40
         ? _scrollPosition / (screenSize.height * 0.40)
         : 1;
-    final bool isSmartphoneScreen =
-        ResponsiveWidget.isSmartphoneScreen(context);
     final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
     return Scaffold(
       extendBodyBehindAppBar: true,
-      drawer:
-          (isSmartphoneScreen || isSmallScreen) ? const ExploreDrawer() : null,
-      appBar: isSmartphoneScreen || isSmallScreen
+      drawer: isSmallScreen ? const ExploreDrawer() : null,
+      appBar: isSmallScreen
           ? AppBar(
               backgroundColor: Colors.blueGrey.shade900.withOpacity(_opacity),
               elevation: 0,
-              title: TextRenderer(
-                child: Text(
-                  'Gesundheitspraxis',
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(_opacity),
-                    fontSize: 20,
-                    fontFamily: 'Kalam',
-                    letterSpacing: 2,
-                  ),
+              title: Text(
+                'Gesundheitspraxis',
+                style: TextStyle(
+                  color: Colors.white.withOpacity(_opacity),
+                  fontSize: 20,
+                  fontFamily: 'Kalam',
+                  letterSpacing: 2,
                 ),
               ),
               iconTheme: const IconThemeData(color: Colors.white),
@@ -96,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               //height: (isSmartphoneScreen || isSmallScreen) ? null : 1900,
-              child: (isSmartphoneScreen || isSmallScreen)
+              child: isSmallScreen
                   ? getSmallScreen()
                   : getBodyLargeScreen(screenSize, context),
             ),
@@ -111,6 +119,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget getBodyLargeScreen(Size screenSize, BuildContext context) {
     bool isVeryLargeScreen = ResponsiveWidget.isVeryLargeScreen(context);
+    bool isMediumScreen = ResponsiveWidget.isMediumScreen(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -121,11 +130,12 @@ class _HomePageState extends State<HomePage> {
         ),*/
         Container(
           alignment: Alignment.center,
-          width: screenSize.width / 1.5,
-          padding: EdgeInsets.only(top: isVeryLargeScreen ? 80 : 60),
+          width:
+              isMediumScreen ? screenSize.width / 1.2 : screenSize.width / 1.5,
+          padding: EdgeInsets.only(top: isVeryLargeScreen ? 130 : 100),
           child: PageViewContent.getContentLargeDevice(context).first,
         ),
-        SizedBox(height: isVeryLargeScreen ? 80 : 30),
+        SizedBox(height: isVeryLargeScreen ? 130 : 50),
         const SizedBox(
           height: 400,
           child: ImageRow(),
@@ -133,13 +143,18 @@ class _HomePageState extends State<HomePage> {
         SizedBox(height: isVeryLargeScreen ? 150 : 50),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 80),
-          width: isVeryLargeScreen ? 1200 : screenSize.width / 1.5,
+          width: isVeryLargeScreen
+              ? 1200
+              : isMediumScreen
+                  ? screenSize.width / 1.2
+                  : screenSize.width / 1.5,
           child: const ContactForm(),
         ),
         SizedBox(height: isVeryLargeScreen ? 150 : 100),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 80),
-          width: screenSize.width / 1.5,
+          width:
+              isMediumScreen ? screenSize.width / 1.2 : screenSize.width / 1.5,
           child: const Location(),
         ),
         const SizedBox(height: 60),
@@ -156,40 +171,30 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextRenderer(
-                child: Text(
-                  'Willkommen auf der Webseite meiner Gesundheitspraxis mit Schwerpunkt auf die Massage und Rückentherapie.',
-                  style: CustomTextTheme.titleSmall,
-                  textAlign: TextAlign.center,
-                ),
+              Text(
+                'Willkommen auf der Webseite meiner Gesundheitspraxis mit Schwerpunkt auf die Massage und Rückentherapie.',
+                style: CustomTextTheme.titleSmall,
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 25),
-              TextRenderer(
-                child: Text(
-                  'Vieles was wir in unserem Leben erfahren, lastet nicht nur auf unseren Schultern, sondern wirkt auf unseren gesamten Körper.\nUnd im Zentrum steht dabei unser Rücken.',
-                  style: CustomTextTheme.bodySmall,
-                ),
+              Text(
+                'Vieles was wir in unserem Leben erfahren, lastet nicht nur auf unseren Schultern, sondern wirkt auf unseren gesamten Körper.\nUnd im Zentrum steht dabei unser Rücken.',
+                style: CustomTextTheme.bodySmall,
               ),
               SizedBox(height: 15),
-              TextRenderer(
-                child: Text(
-                  'Die Komplexität der Zusammenhänge unseres Bewegungsapparates erfordern unterschiedlichste Behandlungs- und Therapieansätze.',
-                  style: CustomTextTheme.bodySmall,
-                ),
+              Text(
+                'Die Komplexität der Zusammenhänge unseres Bewegungsapparates erfordern unterschiedlichste Behandlungs- und Therapieansätze.',
+                style: CustomTextTheme.bodySmall,
               ),
               SizedBox(height: 15),
-              TextRenderer(
-                child: Text(
-                  'Ich würde mich daher sehr freuen, wenn ich, angepasst an Deine persönlichen Bedürfnisse, Dir eine individuelle Therapiebehandlung anbieten dürfte.',
-                  style: CustomTextTheme.bodySmall,
-                ),
+              Text(
+                'Ich würde mich daher sehr freuen, wenn ich, angepasst an Deine persönlichen Bedürfnisse, Dir eine individuelle Therapiebehandlung anbieten dürfte.',
+                style: CustomTextTheme.bodySmall,
               ),
               SizedBox(height: 15),
-              TextRenderer(
-                child: Text(
-                  'Brigitte Müller',
-                  style: CustomTextTheme.bodySmall,
-                ),
+              Text(
+                'Brigitte Müller',
+                style: CustomTextTheme.bodySmall,
               ),
             ],
           ),
@@ -201,7 +206,7 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.all(15),
           child: ContactForm(),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: 40),
         Padding(
           padding: EdgeInsets.all(15),
           child: Location(),

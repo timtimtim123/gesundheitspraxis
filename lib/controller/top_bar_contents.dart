@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:seo_renderer/seo_renderer.dart';
 
 import '../model/menu_angebote.dart';
 import '../model/textTheme.dart';
@@ -57,10 +56,17 @@ class _TopBarContentsState extends State<TopBarContents>
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 18, top: 16),
-                child: Image.asset(
-                  'images/icon_massage_white.png',
-                  color: Colors.white,
-                  scale: 2.7,
+                child: InkWell(
+                  child: Image.asset(
+                    'images/icon_massage_white.png',
+                    color: Colors.white,
+                    scale: 2.7,
+                  ),
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                    ),
+                  ),
                 ),
               ),
               const Spacer(),
@@ -81,12 +87,10 @@ class _TopBarContentsState extends State<TopBarContents>
                     width: 131,
                     child: Column(
                       children: [
-                        TextRenderer(
-                          child: Text(
-                            'Willkommen',
-                            style: CustomTextTheme.getMenuTextStyle(
-                                _isHovering, 0),
-                          ),
+                        Text(
+                          'Willkommen',
+                          style:
+                              CustomTextTheme.getMenuTextStyle(_isHovering, 0),
                         ),
                         const SizedBox(height: 5),
                         getHoverLine(0),
@@ -132,12 +136,10 @@ class _TopBarContentsState extends State<TopBarContents>
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        TextRenderer(
-                          child: Text(
-                            'Über mich',
-                            style: CustomTextTheme.getMenuTextStyle(
-                                _isHovering, 2),
-                          ),
+                        Text(
+                          'Über mich',
+                          style:
+                              CustomTextTheme.getMenuTextStyle(_isHovering, 2),
                         ),
                         const SizedBox(height: 5),
                         getHoverLine(2),
@@ -165,12 +167,10 @@ class _TopBarContentsState extends State<TopBarContents>
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        TextRenderer(
-                          child: Text(
-                            'Preise',
-                            style: CustomTextTheme.getMenuTextStyle(
-                                _isHovering, 3),
-                          ),
+                        Text(
+                          'Preise',
+                          style:
+                              CustomTextTheme.getMenuTextStyle(_isHovering, 3),
                         ),
                         const SizedBox(height: 5),
                         getHoverLine(3),
@@ -224,11 +224,9 @@ class _TopBarContentsState extends State<TopBarContents>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const SizedBox(height: 10),
-                    TextRenderer(
-                      child: Text(
-                        'Angebote',
-                        style: CustomTextTheme.getMenuTextStyle(_isHovering, 1),
-                      ),
+                    Text(
+                      'Angebote',
+                      style: CustomTextTheme.getMenuTextStyle(_isHovering, 1),
                     ),
                     const SizedBox(height: 5),
                     getHoverLine(1),

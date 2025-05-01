@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:seo_renderer/seo_renderer.dart';
 
 import '../../controller/responsive.dart';
 import '../pages/angebot.dart';
@@ -26,8 +25,7 @@ class _BottomBarState extends State<BottomBar> {
     return Container(
       //color: Colors.blueGrey[900]!,
       color: const Color(0xFF1E323B),
-      child: ResponsiveWidget.isSmartphoneScreen(context) ||
-              ResponsiveWidget.isSmallScreen(context)
+      child: ResponsiveWidget.isSmallScreen(context)
           ? Padding(
               padding: const EdgeInsets.all(10),
               child: Column(
@@ -43,20 +41,18 @@ class _BottomBarState extends State<BottomBar> {
                       onHover: (hovering) {
                         setState(() => isHovering = hovering);
                       },
-                      child: TextRenderer(
-                        child: Text(
-                          'Impressum/Datenschutz',
-                          style: TextStyle(
-                            fontFamily: 'Kalam',
-                            color: isHovering
-                                ? Colors.blueGrey[100]
-                                : Colors.blueGrey[300],
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            decoration:
-                                isHovering ? TextDecoration.underline : null,
-                            decorationColor: Colors.white,
-                          ),
+                      child: Text(
+                        'Impressum/Datenschutz',
+                        style: TextStyle(
+                          fontFamily: 'Kalam',
+                          color: isHovering
+                              ? Colors.blueGrey[100]
+                              : Colors.blueGrey[300],
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          decoration:
+                              isHovering ? TextDecoration.underline : null,
+                          decorationColor: Colors.white,
                         ),
                       ),
                     ),
@@ -65,18 +61,14 @@ class _BottomBarState extends State<BottomBar> {
                     ),
                   ],
                   const SizedBox(height: 5),
-                  const TextRenderer(
-                    child: InfoText(
-                      type: 'Email',
-                      text: 'info@rueck-grad.ch',
-                    ),
+                  const InfoText(
+                    type: 'Email',
+                    text: 'info@rueck-grad.ch',
                   ),
                   const SizedBox(height: 3),
-                  const TextRenderer(
-                    child: InfoText(
-                      type: 'Telefon',
-                      text: '079 728 16 56',
-                    ),
+                  const InfoText(
+                    type: 'Telefon',
+                    text: '079 728 16 56',
                   ),
                 ],
               ),
@@ -100,20 +92,18 @@ class _BottomBarState extends State<BottomBar> {
                         onHover: (hovering) {
                           setState(() => isHovering = hovering);
                         },
-                        child: TextRenderer(
-                          child: Text(
-                            'Impressum/Datenschutz',
-                            style: TextStyle(
-                              fontFamily: 'Kalam',
-                              color: isHovering
-                                  ? Colors.blueGrey[100]
-                                  : Colors.blueGrey[300],
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              decoration:
-                                  isHovering ? TextDecoration.underline : null,
-                              decorationColor: Colors.white,
-                            ),
+                        child: Text(
+                          'Impressum/Datenschutz',
+                          style: TextStyle(
+                            fontFamily: 'Kalam',
+                            color: isHovering
+                                ? Colors.blueGrey[100]
+                                : Colors.blueGrey[300],
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            decoration:
+                                isHovering ? TextDecoration.underline : null,
+                            decorationColor: Colors.white,
                           ),
                         ),
                       ),
@@ -125,18 +115,14 @@ class _BottomBarState extends State<BottomBar> {
                       const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          TextRenderer(
-                            child: InfoText(
-                              type: 'Email',
-                              text: 'info@rueck-grad.ch',
-                            ),
+                          InfoText(
+                            type: 'Email',
+                            text: 'info@rueck-grad.ch',
                           ),
                           SizedBox(height: 5),
-                          TextRenderer(
-                            child: InfoText(
-                              type: 'Telefon',
-                              text: '079 728 16 56',
-                            ),
+                          InfoText(
+                            type: 'Telefon',
+                            text: '079 728 16 56',
                           )
                         ],
                       ),

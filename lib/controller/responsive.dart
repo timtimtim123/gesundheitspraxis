@@ -12,24 +12,23 @@ class ResponsiveWidget extends StatelessWidget {
     this.smallScreen,
   }) : super(key: key);
 
-  static bool isSmartphoneScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width < 600;
-  }
+  /*static bool isSmartphoneScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width < 800;
+  }*/
 
   static bool isSmallScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width >= 600 &&
-        MediaQuery.of(context).size.width < 800;
+    return MediaQuery.of(context).size.width <= 950;
   }
 
   static bool isMediumScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width >= 800 &&
-        MediaQuery.of(context).size.width < 1200;
+    return MediaQuery.of(context).size.width >= 950 &&
+        MediaQuery.of(context).size.width < 1370;
   }
 
-  static bool isLargeScreen(BuildContext context) {
+  /*static bool isLargeScreen(BuildContext context) {
     return MediaQuery.of(context).size.width >= 1200 &&
         MediaQuery.of(context).size.width < 1700;
-  }
+  }*/
 
   static bool isVeryLargeScreen(BuildContext context) {
     return MediaQuery.of(context).size.width > 1900;

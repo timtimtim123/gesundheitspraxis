@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:seo_renderer/seo_renderer.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'firebase_options.dart';
@@ -11,7 +11,8 @@ Future<void> main() async {
   // It is safe to call this function when running on mobile or desktop as well.
   setPathUrlStrategy();
 
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -25,21 +26,15 @@ class Gesundheitspraxis extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ///debugInvertOversizedImages = true;
-    return RobotDetector(
-      child: MaterialApp(
-        title: 'Gesundheitspraxis',
-        debugShowCheckedModeBanner: false,
-
-        ///try for better seo
-        navigatorObservers: [seoRouteObserver],
-        theme: ThemeData(
-          colorScheme:
-              ColorScheme.fromSeed(seedColor: Colors.blueGrey.shade900),
-          useMaterial3: true,
-        ),
-        home: const HomePage(),
+    debugInvertOversizedImages = true;
+    return MaterialApp(
+      title: 'Gesundheitspraxis',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey.shade900),
+        useMaterial3: true,
       ),
+      home: const HomePage(),
     );
   }
 }

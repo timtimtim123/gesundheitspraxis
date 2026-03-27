@@ -1,16 +1,13 @@
-# gesundheitspraxis_website
+# Website Gesundheitspraxis
 
-A new Flutter project.
+Diese Website wurde für eine Gesundheitspraxis erstellt.
 
-## Getting Started
+## Beschreibung
+Ziel war es, eine einfache und übersichtliche Website bereitzustellen, auf der Informationen zur Praxis sowie zu angebotenen Leistungen dargestellt werden.
 
-This project is a starting point for a Flutter application.
+## Technologien
+- Flutter, Firebase
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Highlights
+- Umsetzung einer funktionalen Website für einen realen Anwendungsfall
+- Fokus auf klare Struktur und einfache Bedienung

@@ -61,7 +61,7 @@ class TitelBild extends StatelessWidget {
               (constraints.maxHeight * MediaQuery.of(context).devicePixelRatio)
                   .round(),
           //cacheHeight: _screenSize.height.round(),
-          cacheWidth: constraints.maxWidth.round(),
+          //cacheWidth: constraints.maxWidth.round(),
         );
       },
     );

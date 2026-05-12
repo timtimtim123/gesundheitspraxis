@@ -15,7 +15,7 @@ class TopBarContents extends StatefulWidget {
 }
 
 class _TopBarContentsState extends State<TopBarContents>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   final List _isHovering = [
     false,
     false,
@@ -28,10 +28,17 @@ class _TopBarContentsState extends State<TopBarContents>
   ];
 
   bool isOpen = false;
-  late final AnimationController _controller = AnimationController(
+  late final AnimationController _controllerArrowAngebote = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 150),
   );
+  late final AnimationController _controllerArrowVeranstaltungenKurse =
+      AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 150),
+  );
+
+  final OverlayPortalController _tooltipController = OverlayPortalController();
 
   @override
   Widget build(BuildContext context) {
@@ -99,11 +106,11 @@ class _TopBarContentsState extends State<TopBarContents>
                   ),
                 ),
               ),
-              SizedBox(width: screenSize.width / 13),
+              SizedBox(width: 70),
               Padding(
                 padding: const EdgeInsets.only(top: 9),
                 child: SizedBox(
-                  width: 335,
+                  width: 255,
                   child: InkWell(
                     onHover: (value) {
                       setState(() {
@@ -115,20 +122,33 @@ class _TopBarContentsState extends State<TopBarContents>
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
-
-              ///SizedBox(width: screenSize.width / 13),
+              Padding(
+                padding: const EdgeInsets.only(top: 9),
+                child: SizedBox(
+                  width: 360,
+                  child: InkWell(
+                    onHover: (value) {
+                      setState(() {
+                        value ? _isHovering[2] = true : _isHovering[2] = false;
+                      });
+                    },
+                    onTap: () {},
+                    child: getVeranstaltungenKurse(context),
+                  ),
+                ),
+              ),
+              SizedBox(width: 20),
               Padding(
                 padding: const EdgeInsets.only(top: 26),
                 child: InkWell(
                   onHover: (value) {
                     setState(() {
-                      value ? _isHovering[2] = true : _isHovering[2] = false;
+                      value ? _isHovering[3] = true : _isHovering[3] = false;
                     });
                   },
                   onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const Angebot(10),
+                      builder: (context) => const Angebot(15),
                     ),
                   ),
                   child: SizedBox(
@@ -139,27 +159,27 @@ class _TopBarContentsState extends State<TopBarContents>
                         Text(
                           'Über mich',
                           style:
-                              CustomTextTheme.getMenuTextStyle(_isHovering, 2),
+                              CustomTextTheme.getMenuTextStyle(_isHovering, 3),
                         ),
                         const SizedBox(height: 5),
-                        getHoverLine(2),
+                        getHoverLine(3),
                       ],
                     ),
                   ),
                 ),
               ),
-              SizedBox(width: screenSize.width / 13),
+              SizedBox(width: 70),
               Padding(
                 padding: const EdgeInsets.only(top: 26, right: 40),
                 child: InkWell(
                   onHover: (value) {
                     setState(() {
-                      value ? _isHovering[3] = true : _isHovering[3] = false;
+                      value ? _isHovering[4] = true : _isHovering[4] = false;
                     });
                   },
                   onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const Angebot(11),
+                      builder: (context) => const Angebot(16),
                     ),
                   ),
                   child: SizedBox(
@@ -170,10 +190,10 @@ class _TopBarContentsState extends State<TopBarContents>
                         Text(
                           'Preise',
                           style:
-                              CustomTextTheme.getMenuTextStyle(_isHovering, 3),
+                              CustomTextTheme.getMenuTextStyle(_isHovering, 4),
                         ),
                         const SizedBox(height: 5),
-                        getHoverLine(3),
+                        getHoverLine(4),
                       ],
                     ),
                   ),
@@ -202,6 +222,67 @@ class _TopBarContentsState extends State<TopBarContents>
     );
   }
 
+  /*Widget getAngeboteO(BuildContext context) {
+    return Theme(
+      data: ThemeData().copyWith(dividerColor: Colors.transparent),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 111,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 10),
+                  Text(
+                    'Angebote',
+                    style: CustomTextTheme.getMenuTextStyle(_isHovering, 1),
+                  ),
+                  const SizedBox(height: 5),
+                  getHoverLine(1),
+                  const SizedBox(height: 10),
+                ],
+              ),
+            ),
+            const SizedBox(width: 10),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: RotationTransition(
+                turns: Tween(begin: 0.0, end: 0.5)
+                    .animate(_controllerArrowAngebote),
+                child: Icon(
+                  Icons.keyboard_arrow_down,
+                  color: _isHovering[1]
+                      ? Colors.white
+                      : Colors.white.withOpacity(0.8),
+                ),
+              ),
+            ),
+          ],
+        ),
+          child: OverlayPortal(controller: _tooltipController, overlayChildBuilder: (BuildContext context) {
+            return SingleChildScrollView(
+              child: ,
+            );
+                },
+              ),
+        ),
+          backgroundColor: Colors.black.withOpacity(0.73),
+          onExpansionChanged: (changed) {
+            setState(() => isOpen = changed);
+            if (isOpen) {
+              _controllerArrowAngebote.forward(from: 0.0);
+            } else {
+              _controllerArrowAngebote.reverse(from: 0.5);
+            }
+          },
+          title:
+          trailing: const SizedBox(),
+          children: Menu.getAngebote(context),
+        ),
+      ),
+    );
+  }*/
+
   Widget getAngebote(BuildContext context) {
     return Theme(
       data: ThemeData().copyWith(dividerColor: Colors.transparent),
@@ -211,9 +292,9 @@ class _TopBarContentsState extends State<TopBarContents>
           onExpansionChanged: (changed) {
             setState(() => isOpen = changed);
             if (isOpen) {
-              _controller.forward(from: 0.0);
+              _controllerArrowAngebote.forward(from: 0.0);
             } else {
-              _controller.reverse(from: 0.5);
+              _controllerArrowAngebote.reverse(from: 0.5);
             }
           },
           title: Row(
@@ -238,7 +319,8 @@ class _TopBarContentsState extends State<TopBarContents>
               Padding(
                 padding: const EdgeInsets.only(bottom: 12),
                 child: RotationTransition(
-                  turns: Tween(begin: 0.0, end: 0.5).animate(_controller),
+                  turns: Tween(begin: 0.0, end: 0.5)
+                      .animate(_controllerArrowAngebote),
                   child: Icon(
                     Icons.keyboard_arrow_down,
                     color: _isHovering[1]
@@ -250,7 +332,62 @@ class _TopBarContentsState extends State<TopBarContents>
             ],
           ),
           trailing: const SizedBox(),
-          children: MenuAngebot.getMenu(context),
+          children: Menu.getAngebote(context),
+        ),
+      ),
+    );
+  }
+
+  Widget getVeranstaltungenKurse(BuildContext context) {
+    return Theme(
+      data: ThemeData().copyWith(dividerColor: Colors.transparent),
+      child: SingleChildScrollView(
+        child: ExpansionTile(
+          backgroundColor: Colors.black.withOpacity(0.73),
+          onExpansionChanged: (changed) {
+            setState(() => isOpen = changed);
+            if (isOpen) {
+              _controllerArrowVeranstaltungenKurse.forward(from: 0.0);
+            } else {
+              _controllerArrowVeranstaltungenKurse.reverse(from: 0.5);
+            }
+          },
+          title: Row(
+            children: [
+              SizedBox(
+                width: 245,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SizedBox(height: 10),
+                    Text(
+                      'Veranstaltungen/Kurse',
+                      style: CustomTextTheme.getMenuTextStyle(_isHovering, 2),
+                    ),
+                    const SizedBox(height: 5),
+                    getHoverLine(2),
+                    const SizedBox(height: 10),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 10),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: RotationTransition(
+                  turns: Tween(begin: 0.0, end: 0.5)
+                      .animate(_controllerArrowVeranstaltungenKurse),
+                  child: Icon(
+                    Icons.keyboard_arrow_down,
+                    color: _isHovering[2]
+                        ? Colors.white
+                        : Colors.white.withOpacity(0.8),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          trailing: const SizedBox(),
+          children: Menu.getVeranstaltungenKurse(context),
         ),
       ),
     );

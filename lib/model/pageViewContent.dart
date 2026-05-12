@@ -1020,7 +1020,7 @@ class PageViewContent {
           const SizedBox(height: 25),
           const Text(
             'Beziehungsbetrachtungen von',
-            style: CustomTextTheme.bodyLarge,
+            style: CustomTextTheme.displayLarge,
           ),
           const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1116,6 +1116,353 @@ class PageViewContent {
         ],
       ),
       Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '11.9.25 Lesung und Begegnung: Berylls Queste202',
+            style: CustomTextTheme.titleLarge,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Autorin Margrit Krause nimmt Sie mit in eine Welt voller Elfen, Zwergen und Einhörnern – eine magische Geschichte über Versöhnung und Harmonie zwischen Menschen und Naturwesen!',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Im Anschluss eine gemütliche Gesprächsrunde in inspirierender Atmosphäre.',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            '11. September 2025, 19 Uhr, Alb. Zwyssigstrasse 36',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const SizedBox(height: 60),
+          Center(
+            child: DropShadow(
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: Image(
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/beryllsQuest.png'),
+                    height:
+                        ResponsiveWidget.isVeryLargeScreen(context) ? 600 : 400,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '11.10.2025 Kurs: Naturseifen selber herstellen',
+            style: CustomTextTheme.titleLarge,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Seifensieden im Kaltverfahren – Kreativität & Naturpflege vereint',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Möchten Sie lernen, wie man pflegende und umweltfreundliche Naturseifen selber herstellt? In diesem Kurs erfahren Sie Schritt für Schritt, wie aus pflanzlichen Ölen und Fetten hochwertige Seifen entstehen ohne irgendwelche Zusätze und mit individuellen Gestaltungsmöglichkeiten.',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 35),
+          const Text(
+            'Kursinhalte',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const Text(
+            '- Einführung in die Grundlagen der Seifenherstellung',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Sicherer Umgang mit NaOH (Natronlauge)',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Kennenlernen verschiedener Öle, Fette, Düfte und Farben',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Praktische Herstellung zwei verschiedener Seifenblöcken\n  (2x ca. 900ml)',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Tipps für kreative Zusätze (Kräuter, Kaffee, Tonerden etc.)',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Hinweise zu Reifezeit, Lagerung und Pflege der Seifen',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 35),
+          const Text(
+            'Kursdaten',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const Text(
+            'Uhrzeit:    9.30 bis ca. 17 Uhr',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            'Preis:      Fr. 240.00',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            'Ort:       Gesundheitspraxis Brigitte Müller, Alberich Zwyssigstrasse 36, 5430 Wettingen',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 35),
+          const Text(
+            'Anmeldung & Kontakt',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const SelectableText(
+            'Brigitte Müller | 079 728 16 56 | info@rueck-grad.ch',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 60),
+          Center(
+            child: DropShadow(
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: Image(
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/seifen.png'),
+                    height:
+                        ResponsiveWidget.isVeryLargeScreen(context) ? 600 : 400,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '18.10.2025: Kaffee-Degustation mit Naod',
+            style: CustomTextTheme.titleLarge,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Erlebe aromatische Vielfalt aus Äthiopien: Naod Abraham hat sich mit seiner eigenen Rösterei einen Traum erfüllt und röstet seinen 100% Arabica-Kaffee selbst. Genieße feine Nuancen und erfahre Spannendes über Herkunft und Röstkunst.',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 60),
+          Center(
+            child: DropShadow(
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: Image(
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/kaffee.jpg'),
+                    height:
+                        ResponsiveWidget.isVeryLargeScreen(context) ? 600 : 400,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '2.11.2025 Kurs: Naturseifen selber herstellen',
+            style: CustomTextTheme.titleLarge,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Seifensieden im Kaltverfahren – Kreativität & Naturpflege vereint',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Möchten Sie lernen, wie man pflegende und umweltfreundliche Naturseifen selber herstellt? In diesem Kurs erfahren Sie Schritt für Schritt, wie aus pflanzlichen Ölen und Fetten hochwertige Seifen entstehen ohne irgendwelche Zusätze und mit individuellen Gestaltungsmöglichkeiten.',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 35),
+          const Text(
+            'Kursinhalte',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const Text(
+            '- Einführung in die Grundlagen der Seifenherstellung',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Sicherer Umgang mit NaOH (Natronlauge)',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Kennenlernen verschiedener Öle, Fette, Düfte und Farben',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Praktische Herstellung zwei verschiedener Seifenblöcken\n  (2x ca. 900ml)',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Tipps für kreative Zusätze (Kräuter, Kaffee, Tonerden etc.)',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Hinweise zu Reifezeit, Lagerung und Pflege der Seifen',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 35),
+          const Text(
+            'Kursdaten',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const Text(
+            'Uhrzeit:    9.30 bis ca. 17 Uhr',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            'Preis:      Fr. 240.00',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            'Ort:       Gesundheitspraxis Brigitte Müller, Alberich Zwyssigstrasse 36, 5430 Wettingen',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 35),
+          const Text(
+            'Anmeldung & Kontakt',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const SelectableText(
+            'Brigitte Müller | 079 728 16 56 | info@rueck-grad.ch',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 60),
+          Center(
+            child: DropShadow(
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: Image(
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/seifen.png'),
+                    height:
+                        ResponsiveWidget.isVeryLargeScreen(context) ? 600 : 400,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '15.11.2025 Kurs: Naturseifen selber herstellen',
+            style: CustomTextTheme.titleLarge,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Seifensieden im Kaltverfahren – Kreativität & Naturpflege vereint',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Möchten Sie lernen, wie man pflegende und umweltfreundliche Naturseifen selber herstellt? In diesem Kurs erfahren Sie Schritt für Schritt, wie aus pflanzlichen Ölen und Fetten hochwertige Seifen entstehen ohne irgendwelche Zusätze und mit individuellen Gestaltungsmöglichkeiten.',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 35),
+          const Text(
+            'Kursinhalte',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const Text(
+            '- Einführung in die Grundlagen der Seifenherstellung',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Sicherer Umgang mit NaOH (Natronlauge)',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Kennenlernen verschiedener Öle, Fette, Düfte und Farben',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Praktische Herstellung zwei verschiedener Seifenblöcken\n  (2x ca. 900ml)',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Tipps für kreative Zusätze (Kräuter, Kaffee, Tonerden etc.)',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            '- Hinweise zu Reifezeit, Lagerung und Pflege der Seifen',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 35),
+          const Text(
+            'Kursdaten',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const Text(
+            'Uhrzeit:    9.30 bis ca. 17 Uhr',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            'Preis:      Fr. 240.00',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const Text(
+            'Ort:       Gesundheitspraxis Brigitte Müller, Alberich Zwyssigstrasse 36, 5430 Wettingen',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 35),
+          const Text(
+            'Anmeldung & Kontakt',
+            style: CustomTextTheme.displayLarge,
+          ),
+          const SelectableText(
+            'Brigitte Müller | 079 728 16 56 | info@rueck-grad.ch',
+            style: CustomTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: 60),
+          Center(
+            child: DropShadow(
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: Image(
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/seifen.png'),
+                    height:
+                        ResponsiveWidget.isVeryLargeScreen(context) ? 600 : 400,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
@@ -1165,7 +1512,7 @@ class PageViewContent {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Preisanpassung ab 1.5.2025',
+            'Preise',
             style: CustomTextTheme.titleLarge,
           ),
           SizedBox(height: 25),
@@ -2207,7 +2554,7 @@ class PageViewContent {
           const SizedBox(height: 25),
           const Text(
             'Beziehungsbetrachtungen von',
-            style: CustomTextTheme.bodySmall,
+            style: CustomTextTheme.displaySmall,
           ),
           const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -2305,6 +2652,353 @@ class PageViewContent {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
+            '11.9.2025 Lesung und Begegnung: Berylls Queste202',
+            style: CustomTextTheme.titleSmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Autorin Margrit Krause nimmt Sie mit in eine Welt voller Elfen, Zwergen und Einhörnern – eine magische Geschichte über Versöhnung und Harmonie zwischen Menschen und Naturwesen!',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Im Anschluss eine gemütliche Gesprächsrunde in inspirierender Atmosphäre.',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            '11. September 2025, 19 Uhr, Alb. Zwyssigstrasse 36',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 18),
+          DropShadow(
+            offset: CustomImageData.getOffset(),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(16)),
+              child: Image(
+                fit: BoxFit.cover,
+                filterQuality: FilterQuality.high,
+                image: ResizeImage(
+                  const AssetImage('images/beryllsQuest.png'),
+                  width: (MediaQuery.of(context).size.width / 1.2).round(),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '11.10.2025 Kurs: Naturseifen selber herstellen',
+            style: CustomTextTheme.titleSmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Seifensieden im Kaltverfahren – Kreativität & Naturpflege vereint',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Möchten Sie lernen, wie man pflegende und umweltfreundliche Naturseifen selber herstellt? In diesem Kurs erfahren Sie Schritt für Schritt, wie aus pflanzlichen Ölen und Fetten hochwertige Seifen entstehen ohne irgendwelche Zusätze und mit individuellen Gestaltungsmöglichkeiten.',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Kursinhalte',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const Text(
+            '- Einführung in die Grundlagen der Seifenherstellung',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Sicherer Umgang mit NaOH (Natronlauge)',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Kennenlernen verschiedener Öle, Fette, Düfte und Farben',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Praktische Herstellung zwei verschiedener Seifenblöcken\n  (2x ca. 900ml)',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Tipps für kreative Zusätze (Kräuter, Kaffee, Tonerden etc.)',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Hinweise zu Reifezeit, Lagerung und Pflege der Seifen',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Kursdaten',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const Text(
+            'Uhrzeit:    9.30 bis ca. 17 Uhr',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            'Preis:      Fr. 240.00',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            'Ort:       Gesundheitspraxis Brigitte Müller, Alberich Zwyssigstrasse 36, 5430 Wettingen',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Anmeldung & Kontakt',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const SelectableText(
+            'Brigitte Müller | 079 728 16 56 | info@rueck-grad.ch',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 18),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: DropShadow(
+              offset: CustomImageData.getOffset(),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: Image(
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/seifen.png'),
+                    width: (MediaQuery.of(context).size.width / 1.2).round(),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '18.10.2025: Kaffee-Degustation mit Naod',
+            style: CustomTextTheme.titleSmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Erlebe aromatische Vielfalt aus Äthiopien: Naod Abraham hat sich mit seiner eigenen Rösterei einen Traum erfüllt und röstet seinen 100% Arabica-Kaffee selbst. Genieße feine Nuancen und erfahre Spannendes über Herkunft und Röstkunst.',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 18),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: DropShadow(
+              offset: CustomImageData.getOffset(),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: Image(
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/kaffee.jpg'),
+                    width: (MediaQuery.of(context).size.width / 1.2).round(),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '2.11.2025 Kurs: Naturseifen selber herstellen',
+            style: CustomTextTheme.titleSmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Seifensieden im Kaltverfahren – Kreativität & Naturpflege vereint',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Möchten Sie lernen, wie man pflegende und umweltfreundliche Naturseifen selber herstellt? In diesem Kurs erfahren Sie Schritt für Schritt, wie aus pflanzlichen Ölen und Fetten hochwertige Seifen entstehen ohne irgendwelche Zusätze und mit individuellen Gestaltungsmöglichkeiten.',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Kursinhalte',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const Text(
+            '- Einführung in die Grundlagen der Seifenherstellung',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Sicherer Umgang mit NaOH (Natronlauge)',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Kennenlernen verschiedener Öle, Fette, Düfte und Farben',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Praktische Herstellung zwei verschiedener Seifenblöcken\n  (2x ca. 900ml)',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Tipps für kreative Zusätze (Kräuter, Kaffee, Tonerden etc.)',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Hinweise zu Reifezeit, Lagerung und Pflege der Seifen',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Kursdaten',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const Text(
+            'Uhrzeit:    9.30 bis ca. 17 Uhr',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            'Preis:      Fr. 240.00',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            'Ort:       Gesundheitspraxis Brigitte Müller, Alberich Zwyssigstrasse 36, 5430 Wettingen',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Anmeldung & Kontakt',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const SelectableText(
+            'Brigitte Müller | 079 728 16 56 | info@rueck-grad.ch',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 18),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: DropShadow(
+              offset: CustomImageData.getOffset(),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: Image(
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/seifen.png'),
+                    width: (MediaQuery.of(context).size.width / 1.2).round(),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            '15.11.2025 Kurs: Naturseifen selber herstellen',
+            style: CustomTextTheme.titleSmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Seifensieden im Kaltverfahren – Kreativität & Naturpflege vereint',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Möchten Sie lernen, wie man pflegende und umweltfreundliche Naturseifen selber herstellt? In diesem Kurs erfahren Sie Schritt für Schritt, wie aus pflanzlichen Ölen und Fetten hochwertige Seifen entstehen ohne irgendwelche Zusätze und mit individuellen Gestaltungsmöglichkeiten.',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            'Kursinhalte',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const Text(
+            '- Einführung in die Grundlagen der Seifenherstellung',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Sicherer Umgang mit NaOH (Natronlauge)',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Kennenlernen verschiedener Öle, Fette, Düfte und Farben',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Praktische Herstellung zwei verschiedener Seifenblöcken\n  (2x ca. 900ml)',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Tipps für kreative Zusätze (Kräuter, Kaffee, Tonerden etc.)',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            '- Hinweise zu Reifezeit, Lagerung und Pflege der Seifen',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Kursdaten',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const Text(
+            'Uhrzeit:    9.30 bis ca. 17 Uhr',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            'Preis:      Fr. 240.00',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const Text(
+            'Ort:       Gesundheitspraxis Brigitte Müller, Alberich Zwyssigstrasse 36, 5430 Wettingen',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 25),
+          const Text(
+            'Anmeldung & Kontakt',
+            style: CustomTextTheme.displaySmall,
+          ),
+          const SelectableText(
+            'Brigitte Müller | 079 728 16 56 | info@rueck-grad.ch',
+            style: CustomTextTheme.bodySmall,
+          ),
+          const SizedBox(height: 18),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: DropShadow(
+              offset: CustomImageData.getOffset(),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: Image(
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  image: ResizeImage(
+                    const AssetImage('images/seifen.png'),
+                    width: (MediaQuery.of(context).size.width / 1.2).round(),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
             'Dipl. Therapeutin Brigitte Müller\ngeboren 1969 in Wettingen',
             style: CustomTextTheme.titleSmall,
           ),
@@ -2351,22 +3045,22 @@ class PageViewContent {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Preisanpassung ab 1.5.2025',
+            'Preise',
             style: CustomTextTheme.titleSmall,
           ),
           SizedBox(height: 15),
           Text(
-            'Massage/Therapie für 30 Minuten     65.00 CHF',
+            'Massage/Therapie für 30 Minuten\n65.00 CHF',
             style: CustomTextTheme.bodySmall,
           ),
           SizedBox(height: 15),
           Text(
-            'Massage/Therapie für 60 Minuten    130.00 CHF',
+            'Massage/Therapie für 60 Minuten\n130.00 CHF',
             style: CustomTextTheme.bodySmall,
           ),
           SizedBox(height: 15),
           Text(
-            'Massage/Therapie für 75 Minuten    162.50 CHF',
+            'Massage/Therapie für 75 Minuten\n162.50 CHF',
             style: CustomTextTheme.bodySmall,
           ),
           SizedBox(height: 15),
@@ -2450,5 +3144,9 @@ class PageViewContent {
         ],
       ),
     ];
+  }
+
+  static List<Widget> getAngeboteKurse() {
+    return [];
   }
 }

@@ -35,7 +35,7 @@ class _BottomBarState extends State<BottomBar> {
                     InkWell(
                       onTap: () => Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const AngebotMobile(11),
+                          builder: (context) => const AngebotMobile(16),
                         ),
                       ),
                       onHover: (hovering) {
@@ -86,7 +86,7 @@ class _BottomBarState extends State<BottomBar> {
                       InkWell(
                         onTap: () => Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => const Angebot(12),
+                            builder: (context) => const Angebot(17),
                           ),
                         ),
                         onHover: (hovering) {

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../view/pages/angebot.dart';
 import '../view/pages/angebot_mobile.dart';
 
-class MenuAngebot {
-  static List<Widget> getMenu(BuildContext context) {
+class Menu {
+  static List<Widget> getAngebote(BuildContext context) {
     return [
       ListTile(
         title: const Text(
@@ -186,7 +186,7 @@ class MenuAngebot {
     ];
   }
 
-  static List<Widget> getMenuSmallDevice(BuildContext context) {
+  static List<Widget> getAngeboteSmallDevice(BuildContext context) {
     return [
       ListTile(
         visualDensity: const VisualDensity(vertical: -4),
@@ -378,16 +378,228 @@ class MenuAngebot {
     ];
   }
 
+  static List<Widget> getVeranstaltungenKurse(BuildContext context) {
+    return [
+      ListTile(
+        title: const Text(
+          'Lesung und Begegnung: Berylls Queste202',
+          style: _styleTitle,
+        ),
+        subtitle: const Text(
+          '11.9.2025',
+          style: _styleSubtitle,
+        ),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const Angebot(10),
+          ),
+        ),
+      ),
+      const Divider(
+        thickness: 0.5,
+        indent: 10,
+        endIndent: 10,
+        color: Colors.white70,
+      ),
+      ListTile(
+        title: const Text(
+          'Kurs: Naturseifen selber herstellen',
+          style: _styleTitle,
+        ),
+        subtitle: const Text(
+          '11.10.2025',
+          style: _styleSubtitle,
+        ),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const Angebot(11),
+          ),
+        ),
+      ),
+      const Divider(
+        thickness: 0.5,
+        indent: 10,
+        endIndent: 10,
+        color: Colors.white70,
+      ),
+      ListTile(
+        title: const Text('Kaffee-Degustation mit Naod', style: _styleTitle),
+        subtitle: const Text(
+          '18.10.2025',
+          style: _styleSubtitle,
+        ),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const Angebot(12),
+          ),
+        ),
+      ),
+      const Divider(
+        thickness: 0.5,
+        indent: 10,
+        endIndent: 10,
+        color: Colors.white70,
+      ),
+      ListTile(
+        title: const Text(
+          'Naturseifen selber herstellen',
+          style: _styleTitle,
+        ),
+        subtitle: const Text(
+          '2.11.2025',
+          style: _styleSubtitle,
+        ),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const Angebot(13),
+          ),
+        ),
+      ),
+      const Divider(
+        thickness: 0.5,
+        indent: 10,
+        endIndent: 10,
+        color: Colors.white70,
+      ),
+      ListTile(
+        title: const Text(
+          'Naturseifen selber herstellen',
+          style: _styleTitle,
+        ),
+        subtitle: const Text(
+          '15.11.2025',
+          style: _styleSubtitle,
+        ),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const Angebot(14),
+          ),
+        ),
+      ),
+      const SizedBox(height: 7),
+    ];
+  }
+
+  static List<Widget> getVeranstaltungenKurseSmallDevice(BuildContext context) {
+    return [
+      ListTile(
+        visualDensity: const VisualDensity(vertical: -4),
+        title: const Text(
+          'Lesung und Begegnung: Berylls Queste202',
+          style: _styleTitleSmallDevice,
+        ),
+        subtitle: const Text(
+          '11.9.2025',
+          style: _styleSubtitleSmallDevice,
+        ),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const AngebotMobile(9),
+          ),
+        ),
+      ),
+      const Divider(
+        thickness: 0.5,
+        indent: 10,
+        endIndent: 10,
+        color: Colors.white70,
+      ),
+      ListTile(
+        visualDensity: const VisualDensity(vertical: -4),
+        title: const Text(
+          'Kurs: Naturseifen selber herstellen',
+          style: _styleTitleSmallDevice,
+        ),
+        subtitle: const Text(
+          '11.10.2025',
+          style: _styleSubtitleSmallDevice,
+        ),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const AngebotMobile(10),
+          ),
+        ),
+      ),
+      const Divider(
+        thickness: 0.5,
+        indent: 10,
+        endIndent: 10,
+        color: Colors.white70,
+      ),
+      ListTile(
+        visualDensity: const VisualDensity(vertical: -4),
+        title: const Text(
+          'Kaffee-Degustation mit Naod',
+          style: _styleTitleSmallDevice,
+        ),
+        subtitle: const Text(
+          '18.10.2025',
+          style: _styleSubtitleSmallDevice,
+        ),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const AngebotMobile(11),
+          ),
+        ),
+      ),
+      const Divider(
+        thickness: 0.5,
+        indent: 10,
+        endIndent: 10,
+        color: Colors.white70,
+      ),
+      ListTile(
+        visualDensity: const VisualDensity(vertical: -4),
+        title: const Text(
+          'Naturseifen selber herstellen',
+          style: _styleTitleSmallDevice,
+        ),
+        subtitle: const Text(
+          '2.11.2025',
+          style: _styleSubtitleSmallDevice,
+        ),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const AngebotMobile(12),
+          ),
+        ),
+      ),
+      const Divider(
+        thickness: 0.5,
+        indent: 10,
+        endIndent: 10,
+        color: Colors.white70,
+      ),
+      ListTile(
+        visualDensity: const VisualDensity(vertical: -4),
+        title: const Text(
+          'Naturseifen selber herstellen',
+          style: _styleTitleSmallDevice,
+        ),
+        subtitle: const Text(
+          '15.11.2025',
+          style: _styleSubtitleSmallDevice,
+        ),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const AngebotMobile(13),
+          ),
+        ),
+      ),
+      const SizedBox(height: 7),
+    ];
+  }
+
   static const TextStyle _styleTitle = TextStyle(
     fontFamily: 'Kalam',
-    fontSize: 20,
-    letterSpacing: 2,
+    fontSize: 18,
+    letterSpacing: 1.4,
     color: Colors.white,
   );
 
   static const TextStyle _styleSubtitle = TextStyle(
     fontFamily: 'Kalam',
-    letterSpacing: 2,
+    letterSpacing: 1.4,
     color: Colors.white,
   );
 

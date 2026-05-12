@@ -136,7 +136,7 @@ class _ImageRowState extends State<ImageRow> {
                     fit: BoxFit.fitWidth,
                     //filterQuality: FilterQuality.high,
                     image: ResizeImage(
-                      AssetImage('images/$assetPath'),
+                      AssetImage('assets/images/$assetPath'),
                       policy: ResizeImagePolicy.fit,
                       width: MediaQuery.of(context).size.width.round(),
                       height:

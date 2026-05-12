@@ -15,9 +15,14 @@ class ExploreDrawer extends StatefulWidget {
 }
 
 class _ExploreDrawerState extends State<ExploreDrawer>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   bool isOpen = false;
-  late final AnimationController _controller = AnimationController(
+  late final AnimationController _controllerAngebote = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 150),
+  );
+  late final AnimationController _controllerVeranstaltungenKurse =
+      AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 150),
   );
@@ -69,6 +74,14 @@ class _ExploreDrawerState extends State<ExploreDrawer>
               color: Colors.white70,
             ),
           ),
+          getVeranstaltungenKurse(context),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 5),
+            child: Divider(
+              thickness: 0.5,
+              color: Colors.white70,
+            ),
+          ),
           Container(
             height: 50,
             alignment: Alignment.centerLeft,
@@ -76,7 +89,7 @@ class _ExploreDrawerState extends State<ExploreDrawer>
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const AngebotMobile(9),
+                  builder: (context) => const AngebotMobile(14),
                 ),
               ),
               child: const Text(
@@ -99,7 +112,7 @@ class _ExploreDrawerState extends State<ExploreDrawer>
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const AngebotMobile(10),
+                  builder: (context) => const AngebotMobile(15),
                 ),
               ),
               child: const Text(
@@ -128,9 +141,9 @@ class _ExploreDrawerState extends State<ExploreDrawer>
         onExpansionChanged: (changed) {
           setState(() => isOpen = changed);
           if (isOpen) {
-            _controller.forward(from: 0.0);
+            _controllerAngebote.forward(from: 0.0);
           } else {
-            _controller.reverse(from: 0.5);
+            _controllerAngebote.reverse(from: 0.5);
           }
         },
         title: Padding(
@@ -141,7 +154,7 @@ class _ExploreDrawerState extends State<ExploreDrawer>
               const Text('Angebote', style: CustomTextTheme.mobileMenu),
               const SizedBox(width: 8),
               RotationTransition(
-                turns: Tween(begin: 0.0, end: 0.5).animate(_controller),
+                turns: Tween(begin: 0.0, end: 0.5).animate(_controllerAngebote),
                 child: const Icon(
                   Icons.keyboard_arrow_down,
                   color: Colors.white,
@@ -151,7 +164,45 @@ class _ExploreDrawerState extends State<ExploreDrawer>
           ),
         ),
         trailing: const SizedBox(),
-        children: MenuAngebot.getMenuSmallDevice(context),
+        children: Menu.getAngeboteSmallDevice(context),
+      ),
+    );
+  }
+
+  Widget getVeranstaltungenKurse(BuildContext context) {
+    return Theme(
+      data: ThemeData().copyWith(dividerColor: Colors.transparent),
+      child: ExpansionTile(
+        tilePadding: const EdgeInsets.all(0),
+        onExpansionChanged: (changed) {
+          setState(() => isOpen = changed);
+          if (isOpen) {
+            _controllerVeranstaltungenKurse.forward(from: 0.0);
+          } else {
+            _controllerVeranstaltungenKurse.reverse(from: 0.5);
+          }
+        },
+        title: Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Veranstaltungen/Kurse',
+                  style: CustomTextTheme.mobileMenu),
+              const SizedBox(width: 8),
+              RotationTransition(
+                turns: Tween(begin: 0.0, end: 0.5)
+                    .animate(_controllerVeranstaltungenKurse),
+                child: const Icon(
+                  Icons.keyboard_arrow_down,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+        trailing: const SizedBox(),
+        children: Menu.getVeranstaltungenKurseSmallDevice(context),
       ),
     );
   }

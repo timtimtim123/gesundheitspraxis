@@ -56,10 +56,11 @@ class _HomePageState extends State<HomePage> {
         ? _scrollPosition / (screenSize.height * 0.40)
         : 1;
     final bool isSmallScreen = ResponsiveWidget.isSmallScreen(context);
+    final bool noTopbar = ResponsiveWidget.noTopbar(context);
     return Scaffold(
       extendBodyBehindAppBar: true,
-      drawer: isSmallScreen ? const ExploreDrawer() : null,
-      appBar: isSmallScreen
+      drawer: noTopbar ? const ExploreDrawer() : null,
+      appBar: noTopbar
           ? AppBar(
               backgroundColor: Colors.blueGrey.shade900.withOpacity(_opacity),
               elevation: 0,

@@ -27,8 +27,11 @@ class _AngebotState extends State<Angebot> {
               children: [
                 const SizedBox(height: 82),
                 ConstrainedBox(
-                  constraints:
-                      BoxConstraints(minHeight: screenSize.height - 82),
+                  constraints: BoxConstraints(
+                      /*minHeight: widget.index != 12
+                          ? screenSize.height - 82
+                          : screenSize.height*/
+                      minHeight: screenSize.height - 82),
                   child: IntrinsicHeight(
                     child: Container(
                       decoration: BoxDecoration(
@@ -54,7 +57,9 @@ class _AngebotState extends State<Angebot> {
                                 context)[widget.index],
                           ),
                           const SizedBox(height: 43),
+                          //if (widget.index != 12) ...[
                           const Spacer(),
+                          //],
                           const BottomBar(withImpressum: true),
                         ],
                       ),

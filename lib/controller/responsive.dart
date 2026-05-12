@@ -16,6 +16,10 @@ class ResponsiveWidget extends StatelessWidget {
     return MediaQuery.of(context).size.width < 800;
   }*/
 
+  static bool noTopbar(BuildContext context) {
+    return MediaQuery.of(context).size.width <= 1250;
+  }
+
   static bool isSmallScreen(BuildContext context) {
     return MediaQuery.of(context).size.width <= 950;
   }

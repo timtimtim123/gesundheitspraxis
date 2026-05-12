@@ -75,9 +75,9 @@ class CustomTextTheme {
   static TextStyle getMenuTextStyle(List isHovering, int index) {
     return TextStyle(
       fontFamily: 'Kalam',
-      fontSize: 22,
+      fontSize: 20,
       color: isHovering[index] ? Colors.white : Colors.white.withOpacity(0.8),
-      letterSpacing: 2,
+      letterSpacing: 1.4,
     );
   }
 }

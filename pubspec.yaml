@@ -38,7 +38,7 @@ dependencies:
   firebase_core: ^3.10.1
   cloud_firestore: ^5.6.2
   drop_shadow: ^0.1.0
-  #web_smooth_scroll: ^1.1.0
+  #web_smooth_scroll: ^1.1.0-
   google_maps_flutter: ^2.10.0
   font_awesome_flutter: ^10.8.0
 

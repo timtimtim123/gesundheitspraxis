@@ -42,3 +42,10 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+node_modules/
+.dart_tool/
+build/
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
